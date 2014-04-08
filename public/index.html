@@ -47,14 +47,20 @@
 		}
 	</style>
 
+
+	<script type="text/javascript">
+		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
+	</script>
+
 	<script src="jquery.min.js"></script>
+	<script src="textile.js"></script>
 	<script src="jsb.js"></script>
 </head>
 <body>
 <div class="center"><div class="wrapper">
 
 	<div class="header">
-		<a href="/" class="masthead">jsb.org</a> <br/>
+		<a href="index.html" class="masthead">jsb.org</a> <br/>
 
 		<p>Welcome to Javascript Simple Blog, a blog engine for web developer from web developer!. All latest informations, updates, response and rants will be put up here for reference and also to be mocked by others. Just chill and keep writing.</p>
 	</div>
@@ -65,8 +71,11 @@
 
 	</div>
 
-	<div class="navigation">
+	<hr/>
 
+	<div class="navigation">
+		<h3>Other Articles: <a href="#/all" class="more">all post &raquo;</a></h3>
+		<ul id="nav"></ul>
 	</div>
 
 	<hr/>
