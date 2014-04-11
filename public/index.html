@@ -10,6 +10,17 @@
 
 		}
 
+		a, a:visited{
+			color: #08F;
+			text-decoration: none;
+			transition: all 0.5s;
+		}
+
+		a:hover{
+			transition: all 0.5s;
+			color: #0bf;
+		}
+
 		.center{
 			width: 600px;
 			margin: 0 auto;
@@ -51,12 +62,12 @@
 	<script type="text/javascript">
 		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
 		var content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{content}} </div>';
-		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
+		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{wordcount}} </div>';
 	</script>
 
 	<script src="jquery.min.js"></script>
 	<script src="textile.js"></script>
-	<script src="jsb.js"></script>
+	<script src="saurus.js"></script>
 </head>
 <body>
 <div class="center"><div class="wrapper">

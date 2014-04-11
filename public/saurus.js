@@ -68,7 +68,6 @@ $(document).ready(function(){
 			if(uri_segment(0) == 'read') var content_temp = content_template;
 			if(uri_segment(0) == 'all') var content_temp = all_post_content_template;
 
-			console.log(content_temp);
 			content = templater(content_template, metadata[slug]);
 
 			htmls += content+'\n';
@@ -86,7 +85,6 @@ $(document).ready(function(){
 		// console.log(metadata);
 
 		$.each(metadata, function(key,value){
-			console.log(key+' | '+value);
 			temp = temp.replace('{{'+key+'}}', value);
 		});
 
