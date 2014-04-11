@@ -8,13 +8,8 @@ $(document).ready(function(){
 
 		// call other functions to generate all the stuff here
 		// to make it synchronous.
-		
-		// 
-		// var nav = [];
 		draw_nav(post_index);
 		draw_content(post_index);
-		
-
 
 		// bind to navigation events of changing hash
 		$(window).on('hashchange', function(){
@@ -32,6 +27,12 @@ $(document).ready(function(){
 			var to_use = obj_slice(post_index, 0, front_content_limit);
 		}
 
+		if(uri_segment(0) == "read"){
+			var slug = uri_segment(1);
+			var to_use = {};
+			to_use[slug] = post_index[slug];
+		}
+
 		var to_use_limit = Object.size(to_use);
 
 		// prepare the markdowns. Such a hassle because js is asynchronous!
@@ -43,7 +44,7 @@ $(document).ready(function(){
 			var metadata = complete_metadata(metadata);
 			// dapatkan mds from get. This is asynchronous!. Thus need a way to now if all is finished. Maybe we can cross check the need array in mds per key object is there then we go.
 			$.get('posts/'+metadata['filename'], function(md){
-				mds[metadata['filename']] = md;
+				mds[metadata['slug']] = md;
 
 				var current_mds_count = Object.size(mds);
 
@@ -54,7 +55,46 @@ $(document).ready(function(){
 	}
 
 	function inject_content(metadata, mds){
-		console.log(metadata);
+		var htmls = '';
+
+		$.each(mds, function(slug, md){
+			metadata[slug]['content'] = prep_html(md);
+
+			var content_temp = content_template;
+			content = templater(content_template, metadata[slug]);
+
+			htmls += content+'\n';
+		});
+
+		$('#content_wrapper').html(htmls);
+	}
+
+	function templater(template, metadata){
+
+		var temp = template;
+		
+		$.each(metadata, function(key,value){
+			temp = temp.replace('{{'+key+'}}', value);
+		});
+		
+		return temp;
+	}
+
+	function prep_html(md){
+		// remove #title because there exists one in metadata.
+		
+		var lines = md.split('\n');
+		// remove one line, starting at the first position
+		lines.splice(0,1);
+		// join the array back into a single string
+		var md = lines.join('\n');
+
+		// convert to html with textile
+		var html = textile(md);
+
+		// send html back to whoever call
+
+		return html;
 	}
 
 	function draw_nav(post_index){
