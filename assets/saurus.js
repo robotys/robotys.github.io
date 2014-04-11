@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var front_content_limit = 15;
 	// get the index first of all
 
-	$.get('index.json', function(post_index){
+	$.get('assets/index.json', function(post_index){
 		// call other functions to generate all the stuff here
 		// to make it synchronous.
 
