@@ -1,3 +1,5 @@
+![saurus logo](images/saurus_logo.png)
+
 SAURUS
 ======
 
