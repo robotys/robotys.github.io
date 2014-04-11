@@ -24,7 +24,7 @@
 	CONST MARKDOWN_DIR = 'mds';
 
 
-
+	error_reporting(E_ALL);
 	## MAIN
 
 
@@ -34,6 +34,12 @@
 		$ind = indexer($filename);
 
 		$index[$ind['slug']] = $ind;
+
+		//move the file to posts
+		$data = file_get_contents('mds/'.$filename);
+		$path = 'public/posts/'.$filename;
+
+		file_put_contents($path, $data);
 	}
 
 	$data = json_encode($index);
@@ -101,6 +107,7 @@
 
 		
 		$ret['slug'] = $slug;
+		$ret['filename'] = $filename;
 		$ret['timestamp'] = (int)$timestamp;
 		$ret['title'] = $title;
 		$ret['excerpt'] = $excerpt;
