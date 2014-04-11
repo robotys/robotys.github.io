@@ -1,1 +1,101 @@
-Hello world
+<!DOCTYPE HTML>
+<head>
+	<title>&bull; Robotys &bull;</title>
+	<style tyle="text/css">
+		body{
+			background: #eee;
+			color: #444;
+			font-size: 12pt;
+			font-family: Georgia, serif;
+
+		}
+
+		a, a:visited{
+			color: #F15A24;
+			text-decoration: none;
+			transition: all 0.5s;
+		}
+
+		a:hover{
+			transition: all 0.5s;
+			color: #0bf;
+		}
+
+		.center{
+			width: 600px;
+			margin: 0 auto;
+		}
+
+		p{
+			line-height: 1.3em;
+		}
+
+		.wrap{
+			float:left;
+			width: 600px;
+			box-sizing: border-box;
+		}
+
+		.masthead{
+			font-size: 5em;
+			text-decoration: none;
+			/*color: #F15A24;*/
+		}
+
+		.header{
+			font-size: 1.2em;
+		}
+
+		hr{
+			border-width: 1px;
+			border-color: #bbb;
+			border-style: dashed;
+			margin: 40px 0;
+		}
+
+		.footer{
+			font-size: 0.7em;
+		}
+	</style>
+
+
+	<script type="text/javascript">
+		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
+		var content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{content}} </div>';
+		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
+	</script>
+
+	<script src="assets/jquery.min.js"></script>
+	<script src="assets/textile.js"></script>
+	<script src="assets/saurus.js"></script>
+</head>
+<body>
+<div class="center"><div class="wrapper">
+
+	<div class="header">
+		<a href="" class="masthead">Robotys</a> <br/>
+		<p>Ilmu &bull; Idea &bull; Internet</p>
+	</div>
+
+	<hr/>
+
+	<div class="content" id="content_wrapper">
+		<!-- auto generated content will be here -->
+	</div>
+
+	<hr/>
+
+	<div class="navigation">
+		<h3>Other Articles: <a href="#/all" class="more">all post &raquo;</a></h3>
+		<ul id="nav"></ul>
+	</div>
+
+	<hr/>
+
+	<div class="footer">
+		<p>Powered by <a href="http://github.com/robotys/saurus">Saurus</a> in <a href="http://github.com">Github</a> . All rights reserved &copy; 2014 Robotys.net.</p>
+	</div>
+
+</div></div>
+</body>
+</html>
