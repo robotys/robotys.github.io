@@ -33,6 +33,10 @@ $(document).ready(function(){
 			to_use[slug] = post_index[slug];
 		}
 
+		if(uri_segment(0) == "all"){
+			var to_use = post_index;
+		}
+
 		var to_use_limit = Object.size(to_use);
 
 		// prepare the markdowns. Such a hassle because js is asynchronous!
@@ -60,7 +64,11 @@ $(document).ready(function(){
 		$.each(mds, function(slug, md){
 			metadata[slug]['content'] = prep_html(md);
 
-			var content_temp = content_template;
+
+			if(uri_segment(0) == 'read') var content_temp = content_template;
+			if(uri_segment(0) == 'all') var content_temp = all_post_content_template;
+
+			console.log(content_temp);
 			content = templater(content_template, metadata[slug]);
 
 			htmls += content+'\n';
@@ -73,10 +81,15 @@ $(document).ready(function(){
 
 		var temp = template;
 		
+		metadata['excerpt'] = textile(metadata['excerpt']);
+
+		// console.log(metadata);
+
 		$.each(metadata, function(key,value){
+			console.log(key+' | '+value);
 			temp = temp.replace('{{'+key+'}}', value);
 		});
-		
+
 		return temp;
 	}
 
