@@ -1,6 +1,14 @@
-#JSB - Javascript Simple Blog
+SAURUS
+======
 
-Yet another blog engine.
+Git to Blog: Blog engine for web developer.
+
+
+
+
+
+Development Notes
+=================
 
 Main idea is a fork of jeckyl. JSB will generate a 'semi-static' website given a markdown directory full of articles in markdown format.
 
