@@ -3,8 +3,15 @@ SAURUS
 
 Git to Blog: Blog engine for web developer.
 
+INSTALLATION
+============
 
+Currently via github, download the zip package or just git it downstream. In the future will include composer too.
 
+USAGE
+=====
+
+Coming soon
 
 
 Development Notes
