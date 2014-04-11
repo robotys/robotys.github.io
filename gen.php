@@ -21,7 +21,7 @@
 	
 	## Configurations:
 
-	CONST MARKDOWN_DIR = 'mds';
+	CONST MARKDOWN_DIR = 'posts';
 
 
 	error_reporting(E_ALL);
@@ -31,20 +31,18 @@
 	$mds = get_mds();
 
 	foreach($mds as $filename){
-		$ind = indexer($filename);
 
-		$index[$ind['slug']] = $ind;
-
-		//move the file to posts
-		$data = file_get_contents('mds/'.$filename);
-		$path = 'public/posts/'.$filename;
-
-		file_put_contents($path, $data);
+		if($filename != '.DS_Store'){
+			$ind = indexer($filename);
+			$index[$ind['slug']] = $ind;
+		}
 	}
+
+	dumper($index);
 
 	$data = json_encode($index);
 
-	file_put_contents('public/index.json', $data);
+	file_put_contents('index.json', $data);
 
 	echo 'done!';
 
@@ -88,12 +86,11 @@
 		$timestamp = gmdate(strtotime($date));
 
 		// get titles and other metadata too;
-		$contents = file_get_contents('mds/'.$filename);
+		$contents = file_get_contents(MARKDOWN_DIR.'/'.$filename);
 
 		unset($exp);
 		
-		$exp = explode('
-', $contents);
+		$exp = explode("\n", $contents);
 
 		foreach($exp as $ex){
 			if(trim($ex) != '') $cont[] = $ex;
@@ -113,7 +110,7 @@
 		$ret['excerpt'] = $excerpt;
 		$ret['wordcount'] = (int)$wordcount;
 
-		dumper($ret);
+		
 
 		return $ret;
 		

@@ -5,9 +5,11 @@ $(document).ready(function(){
 	// get the index first of all
 
 	$.get('index.json', function(post_index){
-
 		// call other functions to generate all the stuff here
 		// to make it synchronous.
+
+		// console.log(post_index);
+
 		draw_nav(post_index);
 		draw_content(post_index);
 
@@ -65,10 +67,10 @@ $(document).ready(function(){
 			metadata[slug]['content'] = prep_html(md);
 
 
-			if(uri_segment(0) == 'read') var content_temp = content_template;
+			if(uri_segment(0) == 'read' || uri_segment(0) == '') var content_temp = content_template;
 			if(uri_segment(0) == 'all') var content_temp = all_post_content_template;
 
-			content = templater(content_template, metadata[slug]);
+			content = templater(content_temp, metadata[slug]);
 
 			htmls += content+'\n';
 		});
@@ -81,7 +83,6 @@ $(document).ready(function(){
 		var temp = template;
 		
 		metadata['excerpt'] = textile(metadata['excerpt']);
-
 		// console.log(metadata);
 
 		$.each(metadata, function(key,value){
@@ -110,7 +111,7 @@ $(document).ready(function(){
 
 	function draw_nav(post_index){
 		var nav_li = '';
-		
+		// console.log(post_index);
 		var i = 0;
 		$.each(post_index, function(slug,metadata){
 			// metadata = complete_metadata(metadata);
