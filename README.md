@@ -10,6 +10,12 @@ INSTALLATION
 
 Currently via github, download the zip package or just git it downstream. In the future will include composer too.
 
+Installation vai github are as follow:
+
+1. from terminal `git clone https://github.com/robotys/saurus.git blog`. this will create new directory blog with all its contents is from saurus.
+2. cd into blog `cd blog`
+3. change remote to your own github blog repo. lets say 'name/blog'. first, delete old remote origin: ``
+
 USAGE
 =====
 

@@ -8,7 +8,7 @@ $(document).ready(function(){
 		// call other functions to generate all the stuff here
 		// to make it synchronous.
 
-		// console.log(post_index);
+		console.log(post_index);
 
 		draw_nav(post_index);
 		draw_content(post_index);
