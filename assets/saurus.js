@@ -81,9 +81,8 @@ $(document).ready(function(){
 	function templater(template, metadata){
 
 		var temp = template;
-		converter = new Showdown.converter();
-		// metadata['excerpt'] = textile(metadata['excerpt']);
-		metadata['excerpt'] = converter.makeHtml(metadata['excerpt']);
+		
+		metadata['excerpt'] = marked(metadata['excerpt']);
 		// console.log(metadata);
 
 		$.each(metadata, function(key,value){
@@ -102,10 +101,8 @@ $(document).ready(function(){
 		// join the array back into a single string
 		var md = lines.join('\n');
 
-		// convert to html with textile
-		// var html = textile(md);
-		converter = new Showdown.converter();
-		var html = converter.makeHtml(md);
+		// convert to html with marked
+		var html = marked(md);
 
 		// send html back to whoever call
 
