@@ -2,16 +2,26 @@
 <head>
 	<title>&bull; Robotys &bull;</title>
 	<style tyle="text/css">
+
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700);
+
 		body{
 			background: #eee;
 			color: #444;
-			font-size: 12pt;
-			font-family: Georgia, serif;
+			font-size: 11pt;
+			font-family: 'Open Sans', sans-serif;
+			margin: 0px;
+			padding: 0px;
+		}
 
+		h1,h2,h3,h4,h5,h6{
+			font-family: 'Open Sans Condensed';
+			font-weight: 700;
+			text-transform: uppercase;
 		}
 
 		a, a:visited{
-			color: #F15A24;
+			color: #08F;
 			text-decoration: none;
 			transition: all 0.5s;
 		}
@@ -27,7 +37,7 @@
 		}
 
 		p{
-			line-height: 1.3em;
+			line-height: 1.5em;
 		}
 
 		.wrap{
@@ -37,24 +47,66 @@
 		}
 
 		.masthead{
+			font-family: 'Open Sans Condensed';
+			font-weight: 700;
 			font-size: 5em;
 			text-decoration: none;
 			/*color: #F15A24;*/
 		}
 
+		.subtitle{
+			margin-top: -10px;
+			font-size: 2em;
+			font-weight: 700;
+			font-family: 'Open Sans Condensed';
+		}
+
+		.header, .footer, .content, .navigation, .post{
+			float:left;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
 		.header{
-			font-size: 1.2em;
+			font-size: 0.9em;
+			border-top: 3px solid #08F;
+			padding-top:40px;
+		}
+
+		.navigation{
+			margin: 20px 0px;
+		}
+
+		.footer{
+			font-size: 0.7em;
 		}
 
 		hr{
 			border-width: 1px;
 			border-color: #bbb;
-			border-style: dashed;
+			border-style: solid;
 			margin: 40px 0;
 		}
+		
+		.post{
+			margin: 20px 0px;
+			background: #fefefe;
+			padding: 0px 30px 30px 30px;
+			box-shadow: 0px 0px 5px #bbb;
+		}
 
-		.footer{
-			font-size: 0.7em;
+		pre{
+			background: #444;
+			color: #0F0;
+			boz-sizing: border-box;
+			padding: 15px;
+			font-size: 0.9em;
+		}
+
+		blockquote{
+			background: #eee;
+			padding: 5px 15px;
+			border-left: 4px #888 solid;
 		}
 	</style>
 
@@ -66,34 +118,29 @@
 	</script>
 
 	<script src="assets/jquery.min.js"></script>
-	<script src="assets/textile.js"></script>
+	<script src="assets/marked.js"></script>
 	<script src="assets/saurus.js"></script>
 </head>
 <body>
 <div class="center"><div class="wrapper">
 
 	<div class="header">
-		<a href="" class="masthead">Robotys</a> <br/>
-		<p>Ilmu &bull; Idea &bull; Internet</p>
+		<a href="" class="masthead"><img src="images/robotys_face.png" style="width: 80px; margin-right: 10px; margin-left: -100px; margin-bottom: -20px; border-radius: 50%; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;">Robotys.net</a> <br/>
+		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
+		<p>Robotys adalah persona dalam talian milik Izwan Wahab, juruaturcara laman web yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
 	</div>
-
-	<hr/>
 
 	<div class="content" id="content_wrapper">
 		<!-- auto generated content will be here -->
 	</div>
 
-	<hr/>
-
 	<div class="navigation">
-		<h3>Other Articles: <a href="#/all" class="more">all post &raquo;</a></h3>
+		<h3>Artikel-artikel lain: <a href="#/all" class="more">senarai artikel &raquo;</a></h3>
 		<ul id="nav"></ul>
 	</div>
 
-	<hr/>
-
 	<div class="footer">
-		<p>Powered by <a href="http://github.com/robotys/saurus">Saurus</a> in <a href="http://github.com">Github</a> . All rights reserved &copy; 2014 Robotys.net.</p>
+		<p>Powered by <a href="http://github.com/robotys/saurus">Saurus</a> on <a href="http://github.com">Github</a> . All rights reserved &copy; 2014 Robotys.net.</p>
 	</div>
 
 </div></div>

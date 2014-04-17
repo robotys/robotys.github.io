@@ -42,7 +42,7 @@
 
 	$data = json_encode($index);
 
-	file_put_contents('index.json', $data);
+	file_put_contents('assets/index.json', $data);
 
 	echo 'done!';
 

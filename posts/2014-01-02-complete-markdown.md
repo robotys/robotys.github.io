@@ -1,7 +1,4 @@
-# Markdown Examples (Yep, that is for h1 title!)
-
-An h1 header
-============
+#Complete Markdown Example
 
 Paragraphs are separated by a blank line.
 

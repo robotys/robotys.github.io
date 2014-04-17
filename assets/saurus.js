@@ -8,7 +8,7 @@ $(document).ready(function(){
 		// call other functions to generate all the stuff here
 		// to make it synchronous.
 
-		// console.log(post_index);
+		console.log(post_index);
 
 		draw_nav(post_index);
 		draw_content(post_index);
@@ -82,7 +82,7 @@ $(document).ready(function(){
 
 		var temp = template;
 		
-		metadata['excerpt'] = textile(metadata['excerpt']);
+		metadata['excerpt'] = marked(metadata['excerpt']);
 		// console.log(metadata);
 
 		$.each(metadata, function(key,value){
@@ -101,8 +101,8 @@ $(document).ready(function(){
 		// join the array back into a single string
 		var md = lines.join('\n');
 
-		// convert to html with textile
-		var html = textile(md);
+		// convert to html with marked
+		var html = marked(md);
 
 		// send html back to whoever call
 
