@@ -1,0 +1,18 @@
+{
+    "name": "robotys/saurus",
+    "description": "Git to Blog: Blog engine for web developers",
+    "keywords": ["blog","saurus"],
+    "homepage": "http://github.com/robotys/saurus",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Izwan Robotys",
+            "email": "robotys@gmail.com",
+            "homepage": "http://robotys.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.0",
+    }
+}
