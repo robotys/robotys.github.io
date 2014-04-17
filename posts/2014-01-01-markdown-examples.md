@@ -1,8 +1,5 @@
 # Markdown Examples (Yep, that is for h1 title!)
 
-An h1 header
-============
-
 Paragraphs are separated by a blank line.
 
 2nd paragraph. *Italic*, **bold**, `monospace`. Itemized lists
@@ -23,8 +20,6 @@ content starts at 4-columns in.
 
 Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex. "it's all in
 chapters 12--14"). Three dots ... will be converted to an ellipsis.
-
-
 
 An h2 header
 ------------
@@ -98,13 +93,15 @@ doc](local-doc.html). Here's a footnote [^1].
 
 Tables can look like this:
 
-size  material      color
-----  ------------  ------------
-9     leather       brown
-10    hemp canvas   natural
-11    glass         transparent
+size | material     | color
+----   ------------   ------------
+9    | leather      | brown
+10   | hemp canvas  | natural
+11   | glass        | transparent
 
 Table: Shoes, their sizes, and what they're made of
+
+some html tag throwed in: <a href="#">this is anchor</a>
 
 (The above is the caption for the table.) Here's a definition list:
 
