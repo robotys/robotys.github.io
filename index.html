@@ -20,6 +20,7 @@
 			text-transform: uppercase;
 		}
 
+
 		.post h1{
 			text-align: center;
 		}
@@ -131,7 +132,20 @@
 			padding: 5px 15px;
 			border-left: 4px #888 solid;
 		}
+
+		.bg {
+			background: url('images/graphy.png') repeat;
+			position: fixed;
+			width: 100%;
+			height: 300%;
+			top:0;
+			left:0;
+			z-index: -1;
+		}
 	</style>
+
+
+	<script src="assets/jquery.min.js"></script>
 
 
 	<script>
@@ -155,19 +169,32 @@
 
 	</script>
 
+	
+
 	<script type="text/javascript">
 		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
 		var content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> <div class="date"><div>{{datetime}}</div></div> <br/> {{content}} </div>';
 		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
+
+		$(window).scroll(function(e){
+			parallax();
+			console.log('yeah!');
+		});
+
+		function parallax(){
+			var scrolled = $(window).scrollTop();
+			$('.bg').css('top', -(scrolled * 0.2) + 'px');
+		}
 	</script>
 
-	<script src="assets/jquery.min.js"></script>
+	
 	<script src="assets/marked.js"></script>
 	<script src="assets/saurus.js"></script>
 
 
 </head>
 <body>
+<div class="bg"></div>
 <div class="center"><div class="wrapper">
 
 	<div class="header">
