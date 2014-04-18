@@ -100,6 +100,23 @@
 			box-shadow: 0px 0px 5px #bbb;
 		}
 
+		.date{
+			box-sizing: border-box;
+			font-size: 0.8em;
+			border-bottom: 1px #ccc solid;
+			padding-bottom: -10px;
+			text-align: center;
+			margin-top: -10px;
+		}
+
+		.date > div{
+			/*float: left;*/
+			width: 100px;
+			margin: 0 auto;
+			margin-bottom: -9px;
+			background: #fff;
+		}
+
 		pre{
 			background: #444;
 			color: #0F0;
@@ -140,7 +157,7 @@
 
 	<script type="text/javascript">
 		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
-		var content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{content}} </div>';
+		var content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> <div class="date"><div>{{datetime}}</div></div> <br/> {{content}} </div>';
 		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
 	</script>
 
@@ -155,9 +172,16 @@
 
 	<div class="header">
 		<img src="images/robotys_face.png" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> <br/>
-		<a href="" class="masthead">Robotys.net</a> <br/>
+		<a href="" class="masthead">robotys.net</a> <br/>
 		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
 		<p>Robotys adalah persona dalam talian milik Izwan Wahab, juruaturcara laman web yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
+
+		<p>
+			<a title="facebook" href="http://facebook.com/robotys"><img src="images/icon_facebook.png"/></a> &nbsp; &nbsp;
+			<a title="github" href="http://github.com/robotys"><img src="images/icon_github.png"/></a> &nbsp; &nbsp;
+			<a title="twitter" href="http://twitter.com/robotys"><img src="images/icon_twitter.png"/></a>
+<!-- <a class="instagram_metro tsc_social_metro" title="instagram" href="#">instagram</a> -->
+		</p>
 	</div>
 
 	<div class="content" id="content_wrapper">
