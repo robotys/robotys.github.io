@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Bitter|Lobster);
+		body{
+			font-family: Bitter, serif;
+			font-size: 11pt;
+			color: #777;
+			background: #eee;
+			text-align: center;
+		}
+
+		.content, .footer{
+			width: 500px;
+			margin: 0 auto;
+		}
+
+		h1{
+			font-family: Lobster, serif;
+			font-size: 5em;
+			/*text-shadow: 0px 0px 5px #444;*/
+			color: #222;
+		}
+
+		textarea{
+			box-sizing: border-box;
+			width: 100%;
+			border: 0px;
+			/*border-bottom: 2px #444 solid;*/
+			padding: 20px;
+			font-size: 2em;
+			font-family: Bitter;
+			text-align: center;
+			box-shadow: 0px 0px 10px #888;
+		}
+
+		.footer{
+			font-size: 0.8em;
+			color: #999;
+			margin-top: 50px;
+		}
+
+		a, a:visited{
+			color: #777;
+		}
+
+		.error, .success{
+			background: #222;
+			color: #F05;
+			padding: 20px;
+			box-sizing: border-box;
+			margin-bottom: 15px;
+		}
+
+		.error span{
+			color: #fff;
+			font-size: 2em;
+		}
+
+		.success{
+			background: #0598ff;
+			color: #fff;
+		}
+	</style>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			checkPangram();
+
+			$('#text').on('keyup', function(){
+				checkPangram();
+			});
+
+
+
+
+			function checkPangram(){
+				var str = 'abcdefghijklmnopqrstuvwxyz';
+				var all = str.split("");
+				var not_exists = [];
+
+				$.each(all, function(index,val){
+					//compare to text
+					var pos = $('#text').val().toLowerCase().indexOf(val);
+					if(pos == -1){
+						not_exists.push(val);
+					}
+				});
+
+				if(not_exists.length == 0){
+					var response = '<div class="success">Your pangram is complete!</div>';
+				}else{
+					var response = '<div class="error">The following character was not found in the text <br/> <span>'+not_exists.join('</span>, <span>')+'</span></div>';
+				}
+
+				$('#response').html(response);
+			}
+		});
+	</script>
+</head>
+<body>
+	<div class="content">
+		<h1>Pangram Tester</h1>
+		
+		<div id="response"></div>
+		<textarea id="text">Quick fox jumps over the lazy dog</textarea>
+
+		<p>A pangram or holoalphabetic sentence for a given alphabet is a sentence using every letter of the alphabet at least once. Pangrams have been used to display typefaces, test equipment, and develop skills in handwriting, calligraphy, and keyboarding. <a href="http://en.wikipedia.org/wiki/Pangram">more (wikipedia)</a></p>
+
+
+	</div>
+	<div class="footer">
+		made by <a href="http:/github.com/robotys">Robotys</a> for <a href="https://www.facebook.com/groups/jomweb/636277229777283/">Jomweb</a>
+	</div>
+</body>
+</html>
