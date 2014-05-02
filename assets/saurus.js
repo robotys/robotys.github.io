@@ -16,6 +16,9 @@ $(document).ready(function(){
 		// bind to navigation events of changing hash
 		$(window).on('hashchange', function(){
 			draw_content(post_index);
+			$('html, body').animate({
+                scrollTop: $("body").offset().top
+            }, 1000);
 		});
 	});
 

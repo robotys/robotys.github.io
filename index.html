@@ -7,7 +7,7 @@
 	<meta name="description" content="Robotys adalah persona dalam talian milik Izwan Wahab, juruaturcara laman web yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.">
 	<style tyle="text/css">
 
-		@import url(http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700);
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans|Arvo:700);
 
 		body{
 			background: #eee;
@@ -19,7 +19,7 @@
 		}
 
 		h1,h2,h3,h4,h5,h6{
-			font-family: 'Open Sans Condensed';
+			font-family: 'Arvo';
 			font-weight: 700;
 			text-transform: uppercase;
 		}
@@ -56,10 +56,12 @@
 		}
 
 		.masthead{
-			font-family: 'Open Sans Condensed';
+			font-family: 'Arvo';
 			font-weight: 700;
-			font-size: 5em;
+			font-size: 4em;
 			text-decoration: none;
+			text-transform: uppercase;
+			padding: 20px 0px;
 			/*color: #F15A24;*/
 		}
 
@@ -146,7 +148,7 @@
 			background: url('images/graphy.png') repeat;
 			position: fixed;
 			width: 100%;
-			height: 300%;
+			height: 1000%;
 			top:0;
 			left:0;
 			z-index: -1;
@@ -180,7 +182,7 @@
 
 	<script type="text/javascript">
 		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
-		var content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> <div class="date"><div>{{datetime}}</div></div> <br/> {{content}} </div>';
+		var content_template = '<div class="post" id="{{post-id}}"><h1><a href="{{permalink}}">{{title}}</a></h1> <div class="date"><div>{{datetime}}</div></div> <br/> {{content}} </div>';
 		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
 
 		$(window).scroll(function(e){
@@ -205,7 +207,8 @@
 <div class="center"><div class="wrapper">
 
 	<div class="header">
-		<img src="images/robotys_face.png" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> <br/>
+		<img src="images/robotys-net-logo-bulat.jpg" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> 
+		<br/><br/>
 		<a href="" class="masthead">robotys.net</a> <br/>
 		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
 		<p>Robotys adalah persona dalam talian milik Izwan Wahab, juruaturcara laman web yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
