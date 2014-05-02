@@ -2,9 +2,9 @@
 
 	require('HTML_To_Markdown.php');
 	
-	$config['db']		= 'db_name';
-	$config['user']		= 'username';
-	$config['pass']		= 'password';
+	$config['db']		= 'robotys';
+	$config['user']		= 'root';
+	$config['pass']		= 'root';
 
 	$config['host']		= '127.0.0.1';
 	$config['prefix']	= 'wp';
