@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Nilaian</title>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<meta name="description" content="Cubaan facebook lah!">
+	<style tyle="text/css">
+
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans|Arvo:700);
+
+		body{
+			background: #eee;
+			color: #444;
+			font-size: 11pt;
+			font-family: 'Open Sans', sans-serif;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		h1,h2,h3,h4,h5,h6{
+			font-family: 'Arvo';
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+
+		.post h1{
+			text-align: center;
+		}
+
+		a, a:visited{
+			color: #08F;
+			text-decoration: none;
+			transition: all 0.5s;
+		}
+
+		a:hover{
+			transition: all 0.5s;
+			color: #0bf;
+		}
+
+		.center{
+			width: 600px;
+			margin: 0 auto;
+		}
+
+		p{
+			line-height: 1.5em;
+		}
+
+		.wrap{
+			float:left;
+			width: 600px;
+			box-sizing: border-box;
+		}
+
+		.masthead{
+			font-family: 'Arvo';
+			font-weight: 700;
+			font-size: 4em;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: 20px 0px;
+			/*color: #F15A24;*/
+		}
+
+		.subtitle{
+			margin-top: -10px;
+			font-size: 2em;
+			font-weight: 700;
+			font-family: 'Open Sans Condensed';
+		}
+
+		.header, .footer, .content, .navigation, .post{
+			float:left;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.header{
+			font-size: 0.9em;
+			border-top: 3px solid #08F;
+			padding-top:40px;
+			text-align: center;
+		}
+
+		.navigation{
+			margin: 20px 0px;
+		}
+
+		.footer{
+			font-size: 0.7em;
+		}
+
+		hr{
+			border-width: 1px;
+			border-color: #bbb;
+			border-style: solid;
+			margin: 40px 0;
+		}
+		
+		.post{
+			margin: 20px 0px;
+			background: #fefefe;
+			padding: 0px 30px 30px 30px;
+			box-shadow: 0px 0px 5px #bbb;
+		}
+
+		.post img{
+			max-width: 100%;
+			box-sizing: border-box;
+		}
+
+		.date{
+			box-sizing: border-box;
+			font-size: 0.8em;
+			border-bottom: 1px #ccc solid;
+			padding-bottom: -10px;
+			text-align: center;
+			margin-top: -10px;
+		}
+
+		.date > div{
+			/*float: left;*/
+			width: 100px;
+			margin: 0 auto;
+			margin-bottom: -9px;
+			background: #fff;
+		}
+
+		pre{
+			background: #444;
+			color: #0F0;
+			boz-sizing: border-box;
+			padding: 15px;
+			font-size: 0.9em;
+			word-wrap: break-word;
+		}
+
+		blockquote{
+			background: #eee;
+			padding: 5px 15px;
+			border-left: 4px #888 solid;
+		}
+
+		.bg {
+			background: url('images/graphy.png') repeat;
+			position: fixed;
+			width: 100%;
+			height: 1000%;
+			top:0;
+			left:0;
+			z-index: -1;
+		}
+	</style>
+
+
+	<script src="assets/jquery.min.js"></script>
+
+
+	<script>
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-29977976-1', 'robotys.net');
+		ga('send', 'pageview');
+
+
+		// to track all AJAX request, yep, we use ajax for navigation.
+		(function ($) {
+			// Log all jQuery AJAX requests to Google Analytics
+			$(document).ajaxSend(function(event, xhr, settings){ 
+				ga('send','pageview', settings.url.pathname);
+			});
+		})(jQuery);
+
+	</script>
+
+	<script type="text/javascript">
+		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
+		var content_template = '<div class="post" id="{{post-id}}"><h1><a href="{{permalink}}">{{title}}</a></h1> <div class="date"><div>{{datetime}}</div></div> <br/> {{content}} </div>';
+		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
+
+		$(window).scroll(function(e){
+			parallax();
+			console.log('yeah!');
+		});
+
+		function parallax(){
+			var scrolled = $(window).scrollTop();
+			$('.bg').css('top', -(scrolled * 0.2) + 'px');
+		}
+	</script>
+
+	
+	<script src="assets/marked.js"></script>
+	<script src="assets/saurus.js"></script>
+
+
+</head>
+<body>
+<div class="bg"></div>
+<div class="center"><div class="wrapper">
+
+	<div class="header">
+		<img src="images/robotys-net-logo-bulat.jpg" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> 
+		<br/><br/>
+		<a href="" class="masthead">robotys.net</a> <br/>
+		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
+		<p>Robotys adalah persona dalam talian milik Izwan Wahab, <a href="#!/read/tentang-robotys">juruaturcara laman web</a> yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
+
+		<p>
+			<a title="facebook" href="http://facebook.com/robotys"><img src="images/icon_facebook.png"/></a> &nbsp; &nbsp;
+			<a title="github" href="http://github.com/robotys"><img src="images/icon_github.png"/></a> &nbsp; &nbsp;
+			<a title="twitter" href="http://twitter.com/robotys"><img src="images/icon_twitter.png"/></a>
+<!-- <a class="instagram_metro tsc_social_metro" title="instagram" href="#">instagram</a> -->
+		</p>
+	</div>
+
+	<div class="content" id="content_wrapper">
+		<!-- auto generated content will be here -->
+		<div class="spinner" style="width: 100%; box-sizing: border-box; text-align: center; background: #fff; padding: 15px;">
+			loading article <br/>
+			<img src="images/loading.gif"/>
+		</div>
+	</div>
+
+	<div class="navigation">
+		<h3>Artikel-artikel lain: <a href="#!/all" class="more">senarai artikel &raquo;</a></h3>
+		<ul id="nav"></ul>
+	</div>
+
+	<div class="footer">
+		<p>Powered by <a href="http://github.com/robotys/saurus">Saurus</a> on <a href="http://github.com">Github</a> . All rights reserved &copy; 2014 Robotys.net.</p>
+	</div>
+
+</div></div>
+</body>
+</html>
