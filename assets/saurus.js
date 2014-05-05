@@ -8,14 +8,16 @@ $(document).ready(function(){
 		// call other functions to generate all the stuff here
 		// to make it synchronous.
 
-		console.log(post_index);
+		// console.log(post_index);
 
 		draw_nav(post_index);
 		draw_content(post_index);
+		draw_meta(post_index);
 
 		// bind to navigation events of changing hash
 		$(window).on('hashchange', function(){
 			draw_content(post_index);
+			draw_meta(post_index);
 			$('html, body').animate({
                 scrollTop: $("body").offset().top
             }, 1000);
@@ -24,6 +26,35 @@ $(document).ready(function(){
 
 	// console.log( textile('Kambing __AH__ kau *itu*'));
 
+
+	function draw_meta(post_index){
+		
+		// get to use object that contains only posts that we want to draw based on uri segment
+		
+
+		if(uri_segment(0) == "read"){
+			var slug = uri_segment(1);
+			var to_use = {};
+			to_use = post_index[slug];
+
+			console.log(to_use);
+
+			// title
+			var title = to_use['title']+" &bull; Robotys.net";
+			$('title').html(title);
+
+			// description
+			var desc = to_use['excerpt'];
+			$('meta[name=description]').attr('content', desc);
+
+		}else{
+			// biar standard
+
+		}
+
+		
+			
+	}
 
 	function draw_content(post_index){
 		
@@ -48,8 +79,6 @@ $(document).ready(function(){
 		var mds = {};
 
 		$.each(to_use, function(slug,metadata){
-
-
 			var metadata = complete_metadata(metadata);
 			// dapatkan mds from get. This is asynchronous!. Thus need a way to now if all is finished. Maybe we can cross check the need array in mds per key object is there then we go.
 			$.get('posts/'+metadata['filename'], function(md){
@@ -69,7 +98,6 @@ $(document).ready(function(){
 		$.each(mds, function(slug, md){
 			metadata[slug]['content'] = prep_html(md);
 
-
 			if(uri_segment(0) == 'read' || uri_segment(0) == '') var content_temp = content_template;
 			if(uri_segment(0) == 'all') var content_temp = all_post_content_template;
 
@@ -79,6 +107,7 @@ $(document).ready(function(){
 		});
 
 		$('#content_wrapper').html(htmls);
+		
 	}
 
 	function templater(template, metadata){
