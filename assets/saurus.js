@@ -146,7 +146,7 @@ $(document).ready(function(){
 	function complete_metadata(metadata){
 		metadata['datetime'] = get_datetime(metadata['timestamp']);
 		// metadata['filename'] = get_filename(metadata);
-		metadata['permalink'] = '#/read/'+metadata['slug'];
+		metadata['permalink'] = '#!/read/'+metadata['slug'];
 
 		return metadata;
 	}
@@ -169,7 +169,7 @@ $(document).ready(function(){
 
 	function uri_segment(id){
 		var str = window.location.hash;
-		str = str.replace('#/','');
+		str = str.replace('#!/','');
 		var segments = str.split('/');
 		// console.log(segments);
 
