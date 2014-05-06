@@ -37,8 +37,6 @@ $(document).ready(function(){
 			var to_use = {};
 			to_use = post_index[slug];
 
-			console.log(to_use);
-
 			// title
 			var title = to_use['title']+" &bull; Robotys.net";
 			$('title').html(title);
@@ -151,7 +149,7 @@ $(document).ready(function(){
 			var nav_string = nav_template;
 
 			if(i < nav_limit){
-				var permalink = '#/read/'+(metadata['slug']);
+				var permalink = '#!/read/'+(metadata['slug']);
 
 				nav_string = nav_string.replace('{{permalink}}', permalink);
 				nav_string = nav_string.replace('{{title}}', metadata['title']);
