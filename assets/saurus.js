@@ -4,11 +4,13 @@ $(document).ready(function(){
 	var front_content_limit = 15;
 	// get the index first of all
 
-	$.get('assets/index.json', function(post_index){
+	$.get('assets/index.json', function(json){
 		// call other functions to generate all the stuff here
 		// to make it synchronous.
 
 		// console.log(post_index);
+
+		post_index = get_post_index(json);
 
 		draw_nav(post_index);
 		draw_content(post_index);
@@ -31,13 +33,10 @@ $(document).ready(function(){
 		
 		// get to use object that contains only posts that we want to draw based on uri segment
 		
-
 		if(uri_segment(0) == "read"){
 			var slug = uri_segment(1);
 			var to_use = {};
 			to_use = post_index[slug];
-
-			console.log(to_use);
 
 			// title
 			var title = to_use['title']+" &bull; Robotys.net";
@@ -52,8 +51,6 @@ $(document).ready(function(){
 
 		}
 
-		
-			
 	}
 
 	function draw_content(post_index){
@@ -151,7 +148,7 @@ $(document).ready(function(){
 			var nav_string = nav_template;
 
 			if(i < nav_limit){
-				var permalink = '#/read/'+(metadata['slug']);
+				var permalink = '#!/read/'+(metadata['slug']);
 
 				nav_string = nav_string.replace('{{permalink}}', permalink);
 				nav_string = nav_string.replace('{{title}}', metadata['title']);
@@ -213,6 +210,18 @@ $(document).ready(function(){
 
 	function is_home(){
 		return (uri_segment(0) == "");
+	}
+
+	function get_post_index(json){
+
+		var ret = {};
+		$.each(json, function(key, value){
+			if((value['timestamp']*1000) <= (new Date().getTime())){
+				ret[key] = value;
+			}
+		});
+
+		return ret;
 	}
 
 	function get_datetime(UNIX_timestamp){
