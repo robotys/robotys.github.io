@@ -38,7 +38,7 @@
 		}
 	}
 
-	dumper($index);
+	// dumper($index);
 
 	$data = json_encode($index);
 
