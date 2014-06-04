@@ -38,6 +38,14 @@
 			<div class="date"><div>{{datetime}}</div></div> 
 			<br/> {{content}} 
 		</div>';
+
+	$all_template = file_get_contents('template/all.php');
+	$all_post_template = '
+		<div class="post" id="{{post-id}}">
+			<h1><a href="{{permalink}}">{{title}}</a></h1>
+			<div class="date"><div>{{datetime}}</div></div> 
+			<br/> {{excerpt}} 
+		</div>';
 	// generate index
 	// generate archive
 
@@ -55,6 +63,7 @@
 	foreach($posts as $i=>$post){
 		$md = file_get_contents('posts/'.($post['filename']));
 		$md = str_replace('(images/', '(../images/', $md);
+		$post['excerpt'] = str_replace('(images/', '(../images/', $post['excerpt']);
 		// buang first line because it is a title line, we already has title
 
 		$exp = explode("\n", $md);
@@ -82,18 +91,22 @@
 		$vars['img'] = get_first_image($md);
 		$vars['content'] = $Parsedown->text($md);
 		$vars['home_link'] = get_domain();
+		$vars['excerpt'] = $Parsedown->text($vars['excerpt']);
 
 		$template = $read_template;
 		$content = $index_post_template;
+		$all = $all_post_template;
 		foreach($vars as $key=>$value){
 			$template = str_replace('{{'.$key.'}}', $value, $template);
 			$content = str_replace('{{'.$key.'}}', $value, $content);
+			$all = str_replace('{{'.$key.'}}', $value, $all);
 		}
 
 		file_put_contents('read/'.$vars['slug'].'.html', $template);
 
 		// contents untuk index
 		if($i < FRONT_COUNT) $all_contents[] = $content;
+		$all_post[] = $all;
 	}
 
 	for($i = 0; $i < count($posts); $i++){
@@ -107,6 +120,14 @@
 	$index = str_replace('{{others_list}}', $others_list, $index);
 
 	file_put_contents('read/index.html', $index);
+
+	$alls = implode($all_post);
+
+	// gen index
+	$all = str_replace('{{alls}}', $alls, $all_template);
+	// $index = str_replace('{{others_list}}', $others_list, $index);
+
+	file_put_contents('read/all.html', $all);
 
 	echo 'done!';
 

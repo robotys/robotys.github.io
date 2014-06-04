@@ -9,13 +9,10 @@
 
 
 	<script src="../assets/jquery.min.js"></script>
-	<script src="../assets/jquery.min.js"></script>
 	<script src="../assets/ga.js"></script>
 
 	<script type="text/javascript">
-		// var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
-		// var content_template = '<div class="post" id="{{post-id}}"><h1><a href="{{permalink}}">{{title}}</a></h1> <div class="date"><div>{{datetime}}</div></div> <br/> {{content}} </div>';
-		// var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
+		
 
 		$(window).scroll(function(e){
 			parallax();
@@ -62,8 +59,11 @@
 	</div>
 
 	<div class="navigation">
-		<h3>Artikel-artikel lain: <a href="../read/all.html" class="more">senarai artikel &raquo;</a></h3>
-		<ul id="nav">{{others_list}}</ul>
+		<h3>Artikel-artikel lain:</h3>
+		<ul id="nav">
+			{{others_list}}
+			<li><a href="../read/all.html" class="more">senarai artikel &raquo;</a></li>
+		</ul>
 	</div>
 
 	<div class="subscribe">

@@ -82,6 +82,13 @@ p{
 
 .footer{
 	font-size: 0.7em;
+	text-align: center;
+}
+
+#mc_embed_signup{background:auto; clear:left; font:14px Helvetica,Arial,sans-serif; }
+
+#mc_embed_signup form{
+	text-align: center;
 }
 
 hr{

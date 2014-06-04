@@ -5,7 +5,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<meta name="description" content="{{excerpt}}">
-	
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
 	<link href="../assets/style.css" rel="stylesheet" type="text/css" >
 
 
@@ -13,9 +13,6 @@
 	<script src="../assets/ga.js"></script>
 
 	<script type="text/javascript">
-		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
-		var content_template = '<div class="post" id="{{post-id}}"><h1><a href="{{permalink}}">{{title}}</a></h1> <div class="date"><div>{{datetime}}</div></div> <br/> {{content}} </div>';
-		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
 
 		$(window).scroll(function(e){
 			parallax();
@@ -65,18 +62,15 @@
 	</div>
 
 	<div class="navigation">
-		<h3>Artikel-artikel lain: <a href="../read/all.html" class="more">senarai artikel &raquo;</a></h3>
-		<ul id="nav">{{latest_list}}</ul>
+		<h3>Artikel Baru: </h3>
+		<ul id="nav">
+			{{latest_list}}
+			<li><a href="../read/all.html" class="more">senarai artikel &raquo;</a></li>
+		</ul>
 	</div>
 
 	<div class="subscribe">
-		<!-- Begin MailChimp Signup Form -->
-		<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-		<style type="text/css">
-			#mc_embed_signup{background:auto; clear:left; font:14px Helvetica,Arial,sans-serif; }
-			/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-			   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-		</style>
+		
 		<div id="mc_embed_signup">
 			<form action="http://robotys.us8.list-manage.com/subscribe/post?u=6df1d81933d383e3275bb5515&amp;id=7ae6bb174b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				<label for="mce-EMAIL">Subscribe untuk menerima update dan artikel khas</label>

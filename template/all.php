@@ -1,12 +1,11 @@
 <!DOCTYPE HTML>
 <head>
-	<title>Measure : Menyediakan Platform Eksperimen Produk &bull; Robotys.net &bull;</title>
+	<title>Robotys.net &bull; Web &bull; Teknologi &bull; Internet</title>
 
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<meta name="description" content="<p><a href="https://keen.io/">KeenIO</a></p>">
-	<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-	<link href="../assets/style.css" rel="stylesheet" type="text/css" >
+	<link rel="stylesheet" href="../assets/style.css" type="text/css">
+	<meta name="description" content="Robotys adalah persona dalam talian milik Izwan Wahab, juruaturcara laman web yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.">
 
 
 	<script src="../assets/jquery.min.js"></script>
@@ -38,7 +37,7 @@
 		<br/><br/>
 		<a href="../read" class="masthead">robotys.net</a> <br/>
 		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
-		<p>Robotys adalah persona dalam talian milik Izwan Wahab, <a href="../read/tentang-robotys.html">juruaturcara laman web</a> yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
+		<p>Robotys adalah persona dalam talian milik Izwan Wahab, <a href="../read/tentang-robotys">juruaturcara laman web</a> yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
 
 		<p>
 			<a title="facebook" href="http://facebook.com/robotys"><img src="../images/icon_facebook.png"/></a> &nbsp; &nbsp;
@@ -54,31 +53,26 @@
 			loading article <br/>
 			<img src="images/loading.gif"/>
 		</div> -->
-		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/measure-menyediakan-platform-eksperimen.html">Measure : Menyediakan Platform Eksperimen Produk</a></h1>
-			<div class="date"><div>05 Jan 2014</div></div> 
-			<br/> <p><a href="https://keen.io/">KeenIO</a></p>
-<p>Fasa bermula sebuah bisnes harus fokus kepada membangunkan produk dan strategi membesar dan menguasai pasaran. Pembangunan strategi dan produk ini biasa dibina dengan tahap kepercayaan yang tinggi. </p>
-<p>Contohnya "Jumlah anggaran pasaran ecommerce adalah 3.4 billion menjelang 2018, produk/pakej kita paling kurang akan sedut 1% daripada pasaran itu yang mana akan membawa pulang revenue sebanyak RM34 Juta."</p>
-<p>Ini adalah contoh yang biasa kita dengar. Terdapat 3 tahap kepercayaan yang sangat tidak kukuh dalam contoh tersebut iaitu:</p>
-<ol>
-<li>Fakta RM 3.4 bilion adalah fakta luar, bukan fakta dalaman organisasi.</li>
-<li>1% daripada pasaran: belum tentu lagi!</li>
-<li>Belum tentu lagi kita mampu mencapai seluruh pasaran tersebut.</li>
-</ol> 
-		</div>
-	</div>
+		{{alls}}
 
+	</div>
+<!-- 
 	<div class="navigation">
-		<h3>Artikel Baru: </h3>
+		<h3>Artikel-artikel lain:</h3>
 		<ul id="nav">
-			<li><a href="http://localhost/blog/read/strategi-menulis-paling-mudah.html">Strategi Menulis Paling Mudah</a></li><li><a href="http://localhost/blog/read/falsafah-membina-themes-wordpress.html">Panduan Membina Themes Wordpress</a></li><li><a href="http://localhost/blog/read/freelancer-bukan-buruh-digital.html">Freelancer Bukan Buruh Digital</a></li><li><a href="http://localhost/blog/read/taktik-jual-themes-wordpress.html">Taktik Jual Themes Wordpress</a></li><li><a href="http://localhost/blog/read/cara-kira-projek-sambilan.html">Cara Kira Projek Kerja Sambilan</a></li><li><a href="http://localhost/blog/read/strategi-2014.html">Pelajaran Hidup 2014 dan Langkah Seterusnya</a></li><li><a href="http://localhost/blog/read/nilai-seorang-programmer.html">Nilai Seorang Programmer</a></li><li><a href="http://localhost/blog/read/krisis-sebenar-proton-jenama.html">Krisis Sebenar Proton: Jenama</a></li><li><a href="http://localhost/blog/read/strategi-daripada-nilai-dan-budaya-37Signals.html">Strategi Daripada Nilai dan Budaya 37Signals</a></li><li><a href="http://localhost/blog/read/SOPRO.html">SOPRO (Standard Operating Procedure Pro)</a></li>
+			{{others_list}}
 			<li><a href="../read/all.html" class="more">senarai artikel &raquo;</a></li>
 		</ul>
-	</div>
+	</div> -->
 
 	<div class="subscribe">
-		
+		<!-- Begin MailChimp Signup Form -->
+		<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			#mc_embed_signup{background:auto; clear:left; font:14px Helvetica,Arial,sans-serif; }
+			/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+			   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+		</style>
 		<div id="mc_embed_signup">
 			<form action="http://robotys.us8.list-manage.com/subscribe/post?u=6df1d81933d383e3275bb5515&amp;id=7ae6bb174b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 				<label for="mce-EMAIL">Subscribe untuk menerima update dan artikel khas</label>
