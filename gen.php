@@ -92,6 +92,7 @@
 		$vars['datetime'] = date('d M Y');
 		$vars['img'] = get_first_image($md);
 		$vars['content'] = $Parsedown->text($md);
+		$vars['about'] = get_domain().'/read/tentang-robotys.html';
 
 		$template = $read_template;
 
@@ -119,6 +120,12 @@
 		}else{
 			return '';
 		}
+	}
+
+	function get_domain(){
+		$domain = 'http://'.str_replace('/gen.php', '', ($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
+
+		return $domain;
 	}
 
 	function read_url($slug){
