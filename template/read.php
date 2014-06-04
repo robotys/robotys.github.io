@@ -1,14 +1,15 @@
 <!DOCTYPE HTML>
 <head>
-	<title>{{title}} &bull; Robotys.net &bull;</title>
+	<title>{{title}} &bull; Robotys &bull;</title>
 
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="../assets/style.css" type="text/css">
-	<meta name="description" content="{{excerpt}}.">
+	<meta name="description" content="{{excerpt}}">
+	
+	<link href="../assets/style.css" rel="stylesheet" type="text/css" >
 
 
-	<script src="assets/jquery.min.js"></script>
+	<script src="../assets/jquery.min.js"></script>
 
 
 	<script>
@@ -58,16 +59,16 @@
 <div class="center"><div class="wrapper">
 
 	<div class="header">
-		<img src="images/robotys-net-logo-bulat.jpg" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> 
+		<img src="../images/robotys-net-logo-bulat.jpg" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> 
 		<br/><br/>
 		<a href="" class="masthead">robotys.net</a> <br/>
 		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
-		<p>Robotys adalah persona dalam talian milik Izwan Wahab, <a href="#!/read/tentang-robotys">juruaturcara laman web</a> yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
+		<p>Robotys adalah persona dalam talian milik Izwan Wahab, <a href="read/tentang-robotys.html">juruaturcara laman web</a> yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
 
 		<p>
-			<a title="facebook" href="http://facebook.com/robotys"><img src="images/icon_facebook.png"/></a> &nbsp; &nbsp;
-			<a title="github" href="http://github.com/robotys"><img src="images/icon_github.png"/></a> &nbsp; &nbsp;
-			<a title="twitter" href="http://twitter.com/robotys"><img src="images/icon_twitter.png"/></a>
+			<a title="facebook" href="http://facebook.com/robotys"><img src="../images/icon_facebook.png"/></a> &nbsp; &nbsp;
+			<a title="github" href="http://github.com/robotys"><img src="../images/icon_github.png"/></a> &nbsp; &nbsp;
+			<a title="twitter" href="http://twitter.com/robotys"><img src="../images/icon_twitter.png"/></a>
 <!-- <a class="instagram_metro tsc_social_metro" title="instagram" href="#">instagram</a> -->
 		</p>
 	</div>
@@ -86,7 +87,7 @@
 	</div>
 
 	<div class="navigation">
-		<h3>Artikel-artikel lain: <a href="#!/all" class="more">senarai artikel &raquo;</a></h3>
+		<h3>Artikel-artikel lain: <a href="read/all.html" class="more">senarai artikel &raquo;</a></h3>
 		<ul id="nav">{{latest_list}}</ul>
 	</div>
 

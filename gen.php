@@ -35,6 +35,7 @@
 		if($filename != '.DS_Store'){
 			$ind = indexer($filename);
 			$index[$ind['slug']] = $ind;
+			$posts[] = $ind;
 		}
 	}
 
@@ -44,14 +45,86 @@
 
 	file_put_contents('assets/index.json', $data);
 
+
+	// masukkan dalam read
+
+	// generate read template
+	$read_template = file_get_contents('template/read.php');
+	$index_template = file_get_contents('template/index.php');
+
+	// generate index
+	// generate archive
+
+
+	// latest 10:
+	for($ii = 0; ($ii < 10 && $ii < count($posts)) ; $ii++){
+		$latest[] = $posts[$ii];
+
+		$li[] = '<li><a href="'.read_url($posts[$ii]['slug']).'">'.$posts[$ii]['title'].'</a></li>';
+	}
+	// latest list
+	$latest_list = implode($li);
+
+	include('parsedown.php');
+	$Parsedown = new Parsedown();
+
+	foreach($posts as $i=>$post){
+		$md = file_get_contents('posts/'.($post['filename']));
+		$md = str_replace('(images/', '(../images/', $md);
+		// $md = str_replace('images/', '\'../images/', $md);
+		// dumper(strlen($md));
+		$prev = $next = '';
+		
+		if(array_key_exists(($i-1), $posts) !== FALSE){
+			$prev = '<a href="'.read_url($posts[($i-1)]['slug']).'">'.$posts[($i-1)]['title'].'</a>';
+		}
+
+		if(array_key_exists(($i+1), $posts) !== FALSE){
+			$next = '<a href="'.read_url($posts[($i+1)]['slug']).'">'.$posts[($i+1)]['title'].'</a>';
+		}
+
+		$vars = $post;
+		$vars['latest_list'] = $latest_list;
+		$vars['prev'] = $prev;
+		$vars['next'] = $next;
+		$vars['title'] = $post['title'];
+		$vars['permalink'] = read_url($post['slug']);
+		$vars['datetime'] = date('d M Y');
+		$vars['img'] = get_first_image($md);
+		$vars['content'] = $Parsedown->text($md);
+
+		$template = $read_template;
+
+		foreach($vars as $key=>$value){
+			$template = str_replace('{{'.$key.'}}', $value, $template);
+		}
+
+		file_put_contents('read/'.$vars['slug'].'.html', $template);
+	}
+
+
 	echo 'done!';
-
-
-
 
 
 	#################################
 	########### FUNCTIONS ###########
+
+	function get_first_image($md){
+		$temp = explode('![', $md);
+		if(count($temp) > 1){
+			$temp = explode(')', $temp[1]);
+			$temp = explode('](', $temp[0]);
+			
+			return $temp[1];
+		}else{
+			return '';
+		}
+	}
+
+	function read_url($slug){
+		if(!ISSET($domain)) $domain = 'http://'.str_replace('/gen.php', '', ($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
+		return $domain.'/read/'.$slug.'.html';
+	}
 
 	function dumper($multi){
 		echo '<pre>';
@@ -109,8 +182,6 @@
 		$ret['title'] = $title;
 		$ret['excerpt'] = $excerpt;
 		$ret['wordcount'] = (int)$wordcount;
-
-		
 
 		return $ret;
 		
