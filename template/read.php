@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head>
-	<title>{{title}} &bull; Robotys &bull;</title>
+	<title>{{title}} &bull; Robotys.net &bull;</title>
 
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -61,7 +61,7 @@
 	<div class="header">
 		<img src="../images/robotys-net-logo-bulat.jpg" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> 
 		<br/><br/>
-		<a href="" class="masthead">robotys.net</a> <br/>
+		<a href="../read" class="masthead">robotys.net</a> <br/>
 		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
 		<p>Robotys adalah persona dalam talian milik Izwan Wahab, <a href="../read/tentang-robotys.html">juruaturcara laman web</a> yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
 

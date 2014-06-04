@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Robotys.net &bull; Web &bull; Teknologi &bull; Internet</title>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../assets/style.css" type="text/css">
+	<meta name="description" content="Robotys adalah persona dalam talian milik Izwan Wahab, juruaturcara laman web yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.">
+
+
+	<script src="assets/jquery.min.js"></script>
+
+
+	<script>
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-29977976-1', 'robotys.net');
+		ga('send', 'pageview');
+
+
+		// to track all AJAX request, yep, we use ajax for navigation.
+		(function ($) {
+			// Log all jQuery AJAX requests to Google Analytics
+			$(document).ajaxSend(function(event, xhr, settings){ 
+				ga('create', 'UA-29977976-1', 'robotys.net');
+				ga('send','pageview', settings.url.pathname);
+			});
+		})(jQuery);
+
+	</script>
+
+	<script type="text/javascript">
+		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
+		var content_template = '<div class="post" id="{{post-id}}"><h1><a href="{{permalink}}">{{title}}</a></h1> <div class="date"><div>{{datetime}}</div></div> <br/> {{content}} </div>';
+		var all_post_content_template = '<div class="post"><h1><a href="{{permalink}}">{{title}}</a></h1> {{excerpt}} </div>';
+
+		$(window).scroll(function(e){
+			parallax();
+		});
+
+		function parallax(){
+			var scrolled = $(window).scrollTop();
+			$('.bg').css('top', -(scrolled * 0.2) + 'px');
+		}
+	</script>
+
+	<!-- 
+	<script src="assets/marked.js"></script>
+	<script src="assets/saurus.js"></script>
+ -->
+</head>
+<body>
+<div class="bg"></div>
+<div class="center"><div class="wrapper">
+
+	<div class="header">
+		<img src="../images/robotys-net-logo-bulat.jpg" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> 
+		<br/><br/>
+		<a href="../read" class="masthead">robotys.net</a> <br/>
+		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
+		<p>Robotys adalah persona dalam talian milik Izwan Wahab, <a href="../read/tentang-robotys">juruaturcara laman web</a> yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
+
+		<p>
+			<a title="facebook" href="http://facebook.com/robotys"><img src="../images/icon_facebook.png"/></a> &nbsp; &nbsp;
+			<a title="github" href="http://github.com/robotys"><img src="../images/icon_github.png"/></a> &nbsp; &nbsp;
+			<a title="twitter" href="http://twitter.com/robotys"><img src="../images/icon_twitter.png"/></a>
+<!-- <a class="instagram_metro tsc_social_metro" title="instagram" href="#">instagram</a> -->
+		</p>
+	</div>
+
+	<div class="content" id="content_wrapper">
+		<!-- auto generated content will be here -->
+		<!-- <div class="spinner" style="width: 100%; box-sizing: border-box; text-align: center; background: #fff; padding: 15px;">
+			loading article <br/>
+			<img src="images/loading.gif"/>
+		</div> -->
+		
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/strategi-menulis-paling-mudah.html">Strategi Menulis Paling Mudah</a></h1>
+			<div class="date"><div>03 Jun 2014</div></div> 
+			<br/> <p>Hari ini (3 Jun 2014) saya dijemput sebagai penceramah jemputan di Jabatan Perdana Menteri untuk berkongsi tentang penulisan portal.</p>
+<p>Saya berkongsi khusus tentang cara yang mudah untuk membantu kita menulis setiap hari. Antara strategi yang kita boleh gunakan adalah:</p>
+<h2>1) Menulis Rangka Dahulu</h2>
+<p>Ini adalah formula asas. Sama sahaja seperti yang diajarkan semasa SPM. Rangka artikel tidak perlu extra vaganza dan kelihatan hebat.</p>
+<p>Rangka artikel sepatutnya mudah. Ia adalah apa semua isi penting untuk ditulis.</p>
+<p>Bagi Karya cerpen kita boleh senaraikan kronologi cerita cerpen kita.</p>
+<p>Fasa ini adalah fasa brainstorming. Bukan fasa mengubahsuai untuk cantik.</p>
+<p>Terus tulis isi-isi yang berkaitan. Jika sudah ditulis dan rasa isi tersebut tidak berguna, biarkan sahaja. Jangan dipadam.</p>
+<h2>2) Menulis tanpa meng-edit</h2>
+<p>Kita telah dipupuk dari matapelajaran Bahasa Melayu semasa SPM untuk meng0edit semasa mengarang.</p>
+<p>Ini adalah amalan yang SALAH.</p>
+<p>Jangan meng-edit semasa mengarang. Ia akan memutuskan 'flow' yang penting semasa menulis.</p>
+<p>Abaikan typo, grammar, bahasa rojak dan sebagainya semasa menulis draft. Jangan peduli dengan kata-kata rakan yang terlihat tulisan kita semasa draf ini.</p>
+<p>Sudah nama pun draf, penulian ini akan diubahsuai menjadi cantik.</p>
+<p>Fokus kepada meluahkan segala yang terpendam (untuk karya cerpen) atau melengkapkan isi artikel dengan penerangan yang bagus.</p>
+<h2>3) Tulis dalam gaya bahasa percakapan</h2>
+<p>Jika artikel yang ditulis bukan untuk penerbitan akademik, berita ataupun apa-apa penerbitan yang formal, maka tulis sahaja draf tersebut sepertimana kita bercakap dengan orang lain.</p>
+<p>Jika kita penulis baru, mungkin sukar untuk berbuat demikian kerana belum pernah mencuba dan masih tiada momentum.</p>
+<p>Boleh gunakan teknik yang pernah saya guna satu ketika dahulu iaitu merakam bebelan sendiri menggunakan perakam suara (atau smartfon) tentang tajuk dan isi yang ingin ditulis.</p>
+<p>Setelah siap rakam, ulang dengar dan tulis semula.</p>
+<p>Teknik ini sangat bagus kerana penulisan kita dengan sendirinya menjadi mudah difahami oleh pembaca. Ini kerana pembaca berasa seperti sedang bercakap dengan penulis.</p>
+<p>Ia juga bagus kerana teknik ini akan memberi 'suara' yang unik kepada artikel kita. Lain orang lain 'suara'-nya, dan dengan teknik ini suara kita akan ada dalam artikel kita dengan sendirinya.</p>
+<h2>4) Jangan berhenti</h2>
+<p>Perkara utama yang perlu fokus semasa menulis draf adalah JANGAN BERHENTI.</p>
+<p>Buat apa sahaja untuk pastikan kita tidak berhenti semasa menulis.</p>
+<p>Momentum yang hilang semasa menulis amat sukar untuk didapatkan semula. Dan apabila ia sudah hilang, kita perlu berusahan untuk kembali kepada penulisan.</p>
+<p>Antara tips yang boleh diamalkan adalah menulis ketika tengah malam atau awal pagi. Ini kerana waktu tersebut sangat kurang gangguan daripada persekitaran.</p>
+<p>Kita dapat fokus kepada penulisan tanpa gangguan-gangguan tersebut.</p>
+<h2>5) Berhenti setelah siap semua point</h2>
+<p>Ya, berhenti hanya setelah kita sentuh semua isi yang kita senaraikan semasa fasa merangka artikel.</p>
+<p>Jika kita tulis cerpen, hanya berhenti setelah kita siap kembangkan semua kronologi cerita.</p>
+<h2>6) Peram</h2>
+<p>Setelah berhenti, terus save dan simpan. </p>
+<p>JANGAN sentuh atau edit. Biarkan ia terperam dalam harddisk buat satu masa.</p>
+<p>Jangka masa yang bagus adalah 3 hari, namun 1 hari sudah memadai.</p>
+<p>Yang penting pada fasa ini adalah LUPAKAN artikel yang kita telah tulis tadi. Kita boleh fokus kepada kerja/tidur atau sembahyang subuh pula.</p>
+<h2>7) Edit untuk terbit</h2>
+<p>Setelah sehari atau lebih kita peram artikel tadi, baru kita buka semula untuk edit.</p>
+<p>Pada masa ini, kita akan dapat lihat dengan jelas kecacatan dan kekurangan artikel kita.</p>
+<p>Biasanya ia berkisar kepada 3 perkara utama iaitu: 1) Isi berterabur 2) Tajuk tidak menarik 3) Typo dan grammar</p>
+<p>Edit artikel kita tadi sehingga kita puas hati. Setelah itu barulah kita boleh hantar kepada editor untuk tambah baik dari sudut pandang orang ketiga pula.</p>
+<p>Atau jika hanya menulis untuk blog sendiri, kita boleh sahaja terus terbit untuk pembaca di blog kita!</p>
+<p>Itulah perkara yang saya sendiri amalkan untuk menulis setiap hari (atau semasa banyak idea. :))</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/falsafah-membina-themes-wordpress.html">Panduan Membina Themes Wordpress</a></h1>
+			<div class="date"><div>26 May 2014</div></div> 
+			<br/> <p>Wordpress themes telah banyak membantu pengguna wordpress dan juga ramai peniaga yang memerlukan cara mudah, pantas dan murah untuk memiliki alamn web sendiri. Samada melalui freelancer ataupun marketplace yang banyak ada di pasaran, tidak dapat disangkal bahawa jasa Wordpress Themes sangat besar kepada pengguna internet.</p>
+<p>Namun dengan lambakan themes wordpress di pasaran, terdapat lebih banyak themes yang tidak bagus berbanding yang bagus.</p>
+<p>Prestasi themes wordpress perlu dilihat dari dua sudutu iaitu:</p>
+<ol>
+<li>Sudut pengguna themes yang mahukan themes tersebut mempunyai banyak fungsi dan mudah digunakan</li>
+<li>Sudut web developer yang mahukan themes tersebut mudah diubahsuai kodnya dan tidak menjadi punca sakit kepala.</li>
+</ol>
+<p>Benarkah sakit kepala? Ya, boleh google dan baca banyak perkara tentang "Bad Wordpress Themes".</p>
+<p>Jadi, sebagai peringatan kepada diri saya pada masa hadapan, berikut adalah perkara-perkara yang perlu diambil kira jika kau perlu membina themes wordpress:</p>
+<h2>1) Gunakan Themes Framework</h2>
+<p>Themes framework adalah kumpulan kod yang menyediakan banyak fungsi yang diperlukan oleh themes seperti shortcodes dan juga themes options.</p>
+<p><a href="http://themehybrid.com/hybrid-core">Gunakan Hybrid Core</a> atau <a href="http://notes.envato.com/industry-news/introducing-the-redux-framework/">Redux</a> buat masa sekarang sehinggalah Themeforest mengeluar Theme Framework mereka kelak.</p>
+<h2>2) Kod untuk Desain pada Themes, kod untuk Fungsi pada Plugin</h2>
+<p>Ya, gunakan konsep MVC sebaik mungkin walaupun ia mungkin tidak disokong secara native oleh Wordpress. Ini penting untuk memudahkan kita ubahsuai kod pada masa hadapan</p>
+<h2>3) Gunakan Plugin khas untuk Dependencies</h2>
+<p>Gunakan plugin <a href="https://github.com/thomasgriffin/TGM-Plugin-Activation">TGM Plugin Activation</a> untuk menguruskan plugin-plugin yang diperlukan oleh themes supaya turut sama diiinstall semasa themes activation. Dengan ini pembangunan Themes tidak perlu lagi pening kepala memikirkan untuk ditambah kod plugin yang diperlukan.</p>
+<h2>4) Design Yang tercantik dan paling Fleksibel</h2>
+<p>Pengguna wordpress rata-rata mahukan ciri-ciri berikut untuk desain wordpress mereka tidak kira harga mahupun siapa penulis themes tersebut:</p>
+<ol>
+<li>Desain yang cantik, kemas dan unik</li>
+<li>Desain yang fleksibel (themes options)</li>
+<li>Themes yang bersih daripada bug</li>
+<li>Themes yang tidak mengganggu plugin sedia ada</li>
+<li>Setting yang boleh digunakan pada themes lain</li>
+<li>Support yang mantap!</li>
+</ol>
+<p>Itulah 4 perkara penting yang harus diambil kira jika mahu menghasilkan wordpress themes yang digunakan oleh ramai orang dan dikagumi oleh ramai web developer!</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/freelancer-bukan-buruh-digital.html">Freelancer Bukan Buruh Digital</a></h1>
+			<div class="date"><div>18 May 2014</div></div> 
+			<br/> <p>Suka saya mengulas ayat ini secara longgar yang ditulis oleh rakan seperjuangan di <a href="http://rumbia.my/bmc-untuk-freelancer/">rumbia.my</a>:</p>
+<pre><code>Kita freelancer, seorang professional dan bukannya buruh digital.</code></pre>
+<p>Jika anda baca lebih lanjut, apa yang disarankan oleh artikel tersebut adalah sebagai freelancer kita perlu ingat bahawa separuh daripada kerja kita adalah kerja produksi dan kerja teknikal. Manakala separuh lagi yang selalu dilupakan adalah kerja-kerja bisnes dan marketing.</p>
+<p>Namun apa yang ingin saya ulas adalah ayat yang sangat catchy di atas.</p>
+<p>Ya, sebagai seorang freelancer dalam bidang web developer, itu adalah perasaan kita pada banyak masa dan ketika. Freelancer dilayan seperti seorang buruh sahaja. Freelancer dianggap sebagai pekerja yang hanya menurut perintah klien seperti bos.</p>
+<p>Paling sakit hati apabila freelancer buat seperti mana arahan klien tetapi hasilnya tidak klien suka dan klien tersebut salahkan freelancer dan tidak mahu melunaskan bayaran lanjut.</p>
+<p>Memang sakit hati dan sebagai freelancer, perkara ini pasti akan kita rasa.</p>
+<p>Pasti.</p>
+<p>(Yang lebih sakit hati bila kita amat memerlukan bayaran tersebut untuk kegunaan terdekat.)</p>
+<p>Pada masa itu freelancer akan terngiang-ngiang ayat di atas tadi dan akan mula terfikir di manakah silapnya hingga perkara ini terjadi.</p>
+<p>Saya sudah berfikir dan masak tentang perkara ini. Maka inilah hasilnya:</p>
+<h2>Ada Dua Jenis Klien: Bos dan Klien</h2>
+<p><img alt="bos" src="http://www.colourbox.com/preview/4724633-632713-construction-worker-using-digital-tablet.jpg" /></p>
+<p>Setiap klien kita biasanya termaktub dalam 2 kategori utama iaitu kategori Klien atau kategori Bos.</p>
+<p>Apakah maksud kategori Klien? Klien adalah orang yang mengupah 'Nasihat dan Akal Fikiran' kita. Klien jenis ini faham bahawa pengetahuan freelancer lebih luas dan kepakaran freelancer lebih tinggi berbanding diri beliau. Klien jenis ini juga amat menghormati fakta tersebut.</p>
+<p>Hasilnya klien akan lebih terbuka dan menghormati hasil kerja freelancer.</p>
+<p>Klien kategori Bos pula adalah klien yang mengupah freelancer untuk merealisasikan idea beliau. Beliau sudah ada idea dan aka fikiran mereka untuk menyelesaikan masalah mereka. Apa yang mereka perlukan hanyalah 'code monkey' yang patuh arahan mereka.</p>
+<p>Klien kategori Bos inilah yang banyak buat perangai kepada freelancer.</p>
+<p>Cara mengatasi faktor ini adalah kita hanya memilih untuk bekerja dengan klien yang rasional sahaja. Manakala jika kita terpaksa bekerja dengan Bos, kita perlu letakkan siap-siap apakah perkara dan limitasi hubungan perniagaan ini.</p>
+<p>Anggap klien seperti rakan, anggap Bos seperti pelanggan. Itu cara yang paling sesuai.</p>
+<h2>Ada dua jenis Freelancer: Profesional dan Buruh Digital</h2>
+<p><img alt="digital worker" src="http://images.fineartamerica.com/images-medium-large-5/electrician-construction-worker-retro-aloysius-patrimonio.jpg" /></p>
+<p>Ya, freelancer juga menyumbang kepada fenomena ini. Jika kita lihat pasaran freelancer, kita dapat melihat dengan jelas ada 2 kelas freelancer iaitu kelas Profesional dan juga kedua kelas Buruh Digital.</p>
+<p>Bukan bermakna satu lebih bagus daripada yang lain. Ia cuma kategori sahaja.</p>
+<p>Profesional biasanya sudah lama berkecimpung dalam bidang teknikal tersebut dan sudah masak dengan segala macam ragam dan bug yang ada dalam bidang tersebut. Nasihat dan pandangan profesional amat berguna. Kerja dengan profesional lebih cepat siap dan hasilnya lebih berkualiti.</p>
+<p>Buruh digital pula biasanya adalah mereka yang baru berkecimpung dalam bidang teknikal tersebut. Mereka hanya mampu mengikut arahan dan tiada pengalaman yang cukup untuk memberi pandangan yang bernas. Kerja mungkin cepat siap tetapi kualiti kerja tidak sama dengan profesional.</p>
+<h2>Penyelasaian</h2>
+<p>Daripada 2 faktor di atas, kita boleh nampak bahawa masalah utama kita adalah mismatch of manpower.</p>
+<p>Klien yang sepatutnya bekerja dengan profesional tetapi bekerja dengan dengan Buruh Digital.</p>
+<p>Bos yang sepatutnya bekerja dengan Buruh Digital tetapi bekerja dengan profsesional.</p>
+<p>Maka haruslah akan berlaku kekecewaan dan selisih faham antara kedua-dua pihak.</p>
+<p>Penyelasaiannya adalah ganda dua: </p>
+<ol>
+<li>
+<p>Pihak freelancer harus sedar mereka freelancer kategori mana, profesional atau buruh digital.</p>
+</li>
+<li>Pihak freelancer harus proaktif dalam memilih klien mereka mengikut kategori freelancer.</li>
+</ol>
+<p>Jangan harapkan klien untuk membuat pilihan. Biarkan kuasa memilih itu ditangan kita sebagai freelancer agar kita lebih tenang dan tidak tertekan dikemudian hari.</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/taktik-jual-themes-wordpress.html">Taktik Jual Themes Wordpress</a></h1>
+			<div class="date"><div>16 May 2014</div></div> 
+			<br/> <p>Projek seterusnya adalah jual themes wordpress. Ini untuk offset kerja active income (freelance) kepada passive income (royalty). Jadi secara teori, apabila projek ini berjaya, kita akan ada lebih banyak masa untuk perkara lain.</p>
+<p>Berikut adalah benchmark dan rasionalnya:</p>
+<ol>
+<li><strong>Themes diterima di Wordpress.org</strong>. Wordpress.org lebih susah untuk diluluskan berbanding ThemeForest. Jadi secara teorinya, jika kita lepas di Wordpress.org maka mudah untuk kita lepas di ThemeForest.</li>
+<li><strong>Themes berjaya didownload di Wordpress.org</strong></li>
+<li><strong>Themes diterima di Themeforest</strong></li>
+<li><strong>Jualan pertama di ThemeForest</strong></li>
+<li><strong>Payout pertama dari ThemeForest</strong></li>
+<li><strong>USD1000 pertama dari ThemeForest</strong>. Ini benchmark "Sudah hampir" kepada sasaran akhir:</li>
+<li><strong>USD2000 pertama dari ThemeForest</strong>. Ini benchmark "First Touch" kepada sasaran akhir</li>
+<li><strong>Maintain USD2000 sebulan dari ThemeForest</strong>. Ini sasaran yang kita mahukan. Jika boleh cecah maka sudah tidak perlu lagi fokus pada kerja-kerja freelance.</li>
+</ol>
+<p>Untuk mencapai perkara di atas, ada beberapa perkara yang perlu diambli kira. Antara perkara tersebut adalah:</p>
+<ul>
+<li>Perlu pisahkan antara Desain (Themes) dan Fungsi (Plugins). Yang kita mahu jual adalah Themes. Jika perlukan fungsi tertentu kita perlu gunakan Plugins</li>
+<li>Desain perlu semantap mungkin</li>
+<li>Guna Redux sebagai Themes Framework. Ini akan memisahkan setting blog daripada Themes</li>
+</ul>
+<p>Kita perlukan kelebihan untuk memudahkan kita mencapai sasaran. Antara kelebihan desainer lain adalah desain yang awesome, sangat fleksibel dan juga jumlah features yang sungguh banyak.</p>
+<p>Saya lihat, kelebihan utama yang akan memberi ruang yang luas kepada kita adalah short turn over of a design. Masa untuk hasilkan desain baru yang sangat pantas.</p>
+<p>Kita boleh mencapai perkara ini jika kita bukan BINA themes, tetapi CONFIGURE themes.</p>
+<p>Bayangkan jika kita boleh menukar setting layout warna dan sebagainya dengan mudah. Ambil kita contoh Word document dan Master Styles. Apabila Master style bertukar, maka seluruh desain Word document tadi juga akan bertukar.</p>
+<p>Jika kita boleh hasilkan framework sebegitu, maka pasti sangat mudah untuk kita hasilkan banyak themes dalam masa yang sangat pantas.</p>
+<p>Untuk itu, kita perlu fikir dengan lebih lanjut tentang Data Structure dan juga Application Layer untuk memproses themes tadi.</p>
+<p>Sasaran yang mahu dituju: kita boleh randomize setting tersebut dan akan terhasil desain yang lain. Kita juga boleh track setting apa yang paling popular untuk setiap field dan kita boleh gabungkan kesemuanya untuk menghasilkan desain baru.</p>
+<p>Dengan itu, sangat mudah kita desain themes baru setiap minggu!</p>
+<p>Kita juga hanya perlu pastikan <a href="http://www.noupe.com/how-tos/7-key-principles-that-make-a-web-design-look-good.html">7 perkara penting tentang desain</a> untuk menghasilkan themes yang kemas dan kelihatan cantik.</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/cara-kira-projek-sambilan.html">Cara Kira Projek Kerja Sambilan</a></h1>
+			<div class="date"><div>10 May 2014</div></div> 
+			<br/> <p>Sebagai seorang pekerja mahir, kita tidak akan terlepas daripada diminta untuk kerja-kerja freelance/sambilan. Jika anda seorang designer full time, pasti ada yang berminat untuk desain anda secara freelance.</p>
+<p>Bahasa mudahnya freelance ini seperti 'mengambil upah' menghasilkan kerja bagi pihak klien.</p>
+<p>Sebelum anda yang bekerja full time mahu mengambil kerja sambilan, pastikan majikan anda membenarkan anda membuat kerja sambilan. Kebanyakan majikan ada terma dan syarat berkaitan kerja sambilan ini.</p>
+<p>Salah satu perkara yang agak pening untuk mereka yang baru mula freelance adalah tentang meletakkan bayaran. Bagaimanakah cara bayaran dilakukan dan berapakah jumlah bayaran yang sesuai.</p>
+<h2>Cara Bayaran</h2>
+<p>Cara bayaran bagi projek freelance terbahagi kepada tiga iaitu:</p>
+<ol>
+<li>Kadar Tetap untuk Projek</li>
+<li>Kadar langsung dengan Masa yang diperlukan</li>
+<li>Hybrid 1 dan 2.</li>
+</ol>
+<h3>Kadar Tetap</h3>
+<p><strong>Kadar tetap</strong> adalah apabila kita tetapkan daripada awal projek bahawa kerja tersebut bayarannya adalah sekian-sekian. Tidak kira apa yang berlaku, selagi skop kerja tidak berubah maka kadar bayarannya tidak berubah.</p>
+<p>Namun antara cabaran bayaran dengan kadar tetap ini adalah klien kerap menangguhkan kerja dan lambat menghantar bahan yang diperlukan menjadikan dateline kerja teranjak ke hadapan. Ini menjadi masalah besar apabila kerja yang dianjak kehadapan itu sekarang bertindih dengan kerja lain yang sudah dijadualkan pada tarikh yang sama.</p>
+<p>Masalah lain adalah apabila dateline dianjak kehadapan maka bayaran untuk kerja tersebut juga dianjak kehadapan. Ini membuatkan jadual bayaran komitmen kita juga semakin kelam kabut.</p>
+<p>Cara mengatasi perkara ini ada dua iaitu: 1) Bayar mengikut tahap kerja dan 2) Dateline berasaskan jangka masa, bukan tarikh.</p>
+<p>Contoh 1 adalah: bayaran untuk projek website adalah mengikut tahap kerja iaitu tahap 1 - deposit 10%, tahap 2- fasa mockup dan final draft 30%, 3- fasa testing 30% dan tahap 4- fasa deploy dan handover 30%.</p>
+<p>Contoh dateline berasaskan jangka masa adalah:  1- mula kerja mockup (selepas terima deposit) 2- final draft (2 minggu selepas terima deposit) 3- Testing (4 minggu selepas final draft) 4- Handover (2 minggu selepas testing)</p>
+<p>Ia agak kompleks, maka ubahsuai mengikut kemampuan klien dan jumlah bayaran projek tersebut.</p>
+<h3>Bayaran Kadar langsung dengan Masa</h3>
+<p>Cara lain untuk mengatasi complexity cara di atas adalah dengan menggunakan cara bayaran kedua iaitu Kadar Langsung Dengan Masa.</p>
+<p>Cara bayaran ini lebih mudah. Kita tetapkan berapakah upah bagi setiap jam kerja dilakukan. Contohnya RM300 per jam sehingga siap.</p>
+<p>Maka klien hanya akan bayar bagi setiap masa yang kita luangkan untuk projek tersebut.</p>
+<p>Tidak kira berapa banyak perubahan dan apapun yang dimahukan, upah tetap mengikut kadar yang telah ditetapkan.</p>
+<p>Cabaran bagi cara ini adalah konflik antara klien dan freelancer. Klien mahukan masa yang rendah untuk upah yang murah manakala freelancer mahukan masa yang lebih lama untuk upah yang lebih tinggi. Klien akan berasa was-was dengan freelancer kerana takut freelancer mengambil kesempatan dengan sengaja membuat kerja dengan perlahan.</p>
+<p>Ini adalah cabaran yang sangat biasa berlaku. Cara mengatasinya adalah mudah sebenarnya. Apabila kerja yang kita lakukan semakin cepat siap, maka kita harus meningkatkan kadar bayaran perjam kita.</p>
+<p>Contohnya, sebelum ini kerja desain web site mengambil masa 2 minggu untuk siap dan kita meletakkan kadar bayaran RM500 sehari. Tetapi sekarang kerja yang sama kita mampu siapkan dalam masa seminggu sahaja. Apa yang kita boleh lakukan adalah meningkatkan kadar bayaran kepada RM800 sehari. Ya mungkin jumlah keseluruhan lebih rendah (RM5600 VS RM7000) tetapi harus kita ingat bahawa RM5600 itu untuk seminggu manakalau RM7000 itu untuk 2 minggu.</p>
+<p>Jika kita guna kadar terbaru untuk 2 minggu tentulah ianya lebih banyak daripada RM7000 (RM11,200 sebenarnya).</p>
+<h3>Hybrid</h3>
+<p>Ada juga cara bayaran yang menggabungkan kedua-dua elemen ini dalam pelbagai cara.</p>
+<p>Pertama adalah menetapkan kadar mengikut projek dan masa yang diperlukan diikuti dengan kadar perjam selepas masa tersebut tamat. Contohnya RM10000 yang siap dalam masa 2 bulan dan bayaran RM300 perhari selepas tamat masa tersebut.</p>
+<p>Cara ini adalah untuk menyelamatkan pihak freelancer daripada menanggung kerugian jika projek tersasar daripada dateline.</p>
+<p>Cara kedua yang juga popular adalah menetapkan kadar perjam dan mewajibkan klien membayar deposit sebelum memulakan kerja. Ia ibarat topup prepaid. Contohnya projek dijangka siap dalam masa 2 minggu (10 hari) dengan kadar bayaran RM500 sehari. Jumlah keseluruhan adalah RM5000 manakala deposit yang diminta adalah RM1500 untuk kerja minimum 3 hari pertama. Bayaran harus dimasukkan setiap hari khamis sebagai contoh.</p>
+<h2>Mengira Jumlah Bayaran Yang Sesuai</h2>
+<p>Cara mengira jumlah bayaran adalah mudah jika anda baru bermula dan ada kerja tetap. Kita gunakan gaji daripada kerja tetap tadi untuk menentukan kadar per jam kita.</p>
+<p>Contohnya gaji bulanan adalah RM2000 sebagai junior web developer. Maka gaji perjam boleh dikira menggunakan cara berikut:</p>
+<pre><code>RM 2000 / (20 hari bekerja x 9 jam sehari) = RM 11/jam</code></pre>
+<p>(ya, itulah kadar perjam sebagai penduduk kelas miskin bandar)</p>
+<p>atau kiraan perhari:</p>
+<pre><code>RM 2000 / 20 hari bekerja dalam sebulan = RM 100 sehari</code></pre>
+<p>Itu adalah kadar bayaran permasa. Maak untuk setiap projek, anggarkan kadar masa yang diperlukan. Contohnya 1 bulan. Gunakan cara berikut untuk mendapatkan jumlah bayaran yang sesuai:</p>
+<pre><code>1 bulan x 2 x 30 hari x RM 100 perhari = RM 6000</code></pre>
+<p>Mengapa 1 bulan x 2 ? Kerana kerja sambilan memerlukan masa sambilan dirumah. Masa sambilan kita dirumah biasanya adalah 4 jam sehari mengikut pengalaman saya. Maka 1 bulan projek full time kita bersamaan dengan dua kali ganda iaitu 2 bulan untuk projek sambilan tersebut.</p>
+<p>Maka itulah cara kira perkara-perkara penting untuk setiap projek sambilan kita iaitu:</p>
+<ol>
+<li>Jangka masa siap (berapa hari/bulan)</li>
+<li>Kos yang diperlukan (berapa ringgit)</li>
+</ol> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/strategi-2015.html">Pelajaran Hidup 2015 dan Langkah Seterusnya</a></h1>
+			<div class="date"><div>06 May 2014</div></div> 
+			<br/> <p>Setelah 3 tahun bertukar arah menjadi pekerja sepenuh masa (sebelum ini saya freelancer sepenuh masa) maka tibalah masa untuk merenung kembali apakah yang telah dipelajari selama ini dan apakah pula langkah untuk masa mendatang.</p>
+<h2>Pelajaran 1: Stabiliti penting untuk minda tenang</h2>
+<p>Perkara yang paling sakit semasa freelance dahulu adalah income yang tidak menentu. Mungkin kerana masih terlalu baru dalam freelancing digabung dengan perangai yang 'malu untuk meminta bayaran' maka pengalaman freelancing saya sangat tidak seronok.</p>
+<p>Setelah bekerja sepenuh masa, ternyata stabiliti yang kelihatan ringkas pada mata kasar adalah sangat bernilai. Ia membawa ketenangan yang luar biasa bagi saya. Rutin gaji masuk setiap bulan memudahkan kita membuat perancangan pada masa hadapan.</p>
+<p>Yang paling suka apabila kita ada pendapatan tetap setiap bulan adalah bank terutamanya bahagian pinjaman dan kad kredit. Maka perlu juga belajar 'say no' untuk menghindari hutang yang tidak diperlukan.</p>
+<h2>Pelajaran 2: Kebanyakan Buku Kewangan adalah untuk Pekerja Makan Gaji</h2>
+<p>Ya, kebanyakan buku kewangan yang saya baca suatu ketika dahulu kini 'make sense'. Semasa freelancing, kebanyakan tips dan nasihat yang diberikan nampak seperti tidak berpijak didunia nyata. Rupa-rupanya dunia buku kewangan tersebut memang tidak serupa dengan dunia kehidupan saya ketika itu.</p>
+<p>Kini, nasihat untuk 'bayar diri sendiri dahulu' sebelum membayar orang lain adalah satu nasihat yang sangat berguna (walaupun masih ada lompong amalan menyimpan saya, namun ia sudah memberi kesan yang positif)</p>
+<h2>Pelajaran 3: Freelancing sambil Makan Gaji terlalu memenatkan</h2>
+<p>Sehingga sekarang masih ada kerja freelancing yang sedang diusahakan. Kebanyakannya adalah daripada klien yang sudah bertukar tahap kepada rakan. Walapun tidak serancak dahulu, namun beban kerja terasa tiga kali ganda. Sungguh penat.</p>
+<p>Bertambah penat apabila masa untuk menghasilkan kerja freelance perlu ditolak daripada masa bersama keluarga atau masa berehat daripada kerja di pejabat. Ini bukanlah formula hidup yang bagus</p>
+<h2>Pelajaran 4: Kadar Freelance sambil Makan Gaji meningkat mendadak</h2>
+<p>Penat bekerja haruslah berbaloi. Maka amatlah berbaloi untuk penat apabila kadar freelance anda kini adalah tiga kali ganda berbanding semasa freelance full time.</p>
+<p>Mengapa begitu? Kerana kini kita boleh 'say no' kepada mana-mana projek yang tidak menarik tanpa perlu rasa takut dengan pendapatan bulan hadapan yang tidak menentu.</p>
+<p>Kerana itu jugalah kita boleh memilih klien yang mudah untuk kita uruskan dan terbukti bagus dalam membayar projek mengikut masa yang ditetapkan</p>
+<h2>Pelajaran 5: Makan Angin di Luar Negara Membuka Minda</h2>
+<p>3 tahun kebelakangan ini semakin berani menjejakkan kaki ke luar negara (terima kasih kepada makwe cun yang memperkenalkan makan angin luar negara ini :) ). Ia sangat membuka minda seperti mana iklan MAS suatu ketika dahulu.</p>
+<p>Simpan yang ini, saya akan kongsi tentang minda terbuka akibat jalan-jalan ini pada post akan datang.</p>
+<h2>Pelajaran 6: Peluang Semakin Terbuka Seiring dengan Pengalaman</h2>
+<p>Pengalaman kerja dan kemahiran yang sentiasa diasah akan membawa kita kepada banyak pintu-pintu peluang kepada kita.</p>
+<p>Yang akan membukan pintu-pintu tersebut adalah kenalan kita dalam industri yang sama.</p>
+<p>Disinilah pentingnya kita berinteraksi dengan pemain-pemain dalam industri yang sama dan juga industri yang selari.</p>
+<h2>Pelajaran 6: Tidak Mahu Freelance Lagi</h2>
+<p>Komitmen yang tinggi untuk freelance menjadikan ia bukan lagi satu pilihan yang seksi untuk masa akan datang. Komitmen apa? komitmen masa, tenaga dan fokus yang sangat tinggi. </p>
+<p>Malah ternyata, beberapa projek freelance terbaru telah membuktikan saya bukanlah orang yang mampu menguruskan banyak projek serentak.</p>
+<hr />
+<p>Freelance seronok kerana ia mencabar kemahiran diri dan meluaskan pengalaman kerja. Namun apabila ia bukan lagi satu pilihan, apa pula langkah seterusnya untuk terus mengecapi kebaikan freelance?</p>
+<p>Ada beberapa idea namun satu idea ini yang melekat di minda saya.</p>
+<p>Menjadi author di marketplace sedia ada.</p>
+<p>Contohnya, menjadi Wordpress Themes Author di ThemeForest.</p>
+<p>Satu-satunya perkara yang tidak ada pada WP Themes Author tetapi ada pada Freelancing adalah jumlah bayaran. Saya tidak tahu akan jumlah bayaran yang boleh saya dapat. Mungkin banyak atau mungkin tidak ada langsung.</p>
+<p>Namun dengan <a href="http://code.tutsplus.com/tutorials/a-roadmap-to-publishing-wordpress-themes-for-themeforest--wp-28896">strategi yang betul</a>, ia sepatutnya membuahkan hasil dalam masa 6 bulan. (jangan lupa tips paling penting: <a href="http://code.tutsplus.com/tutorials/creating-a-wordpress-theme-from-static-html-releasing-your-theme--wp-34242">test themes</a> tersebut sebelum submit ke themeforest!)</p>
+<p>Maka, langkah seterusnya untuk diri saya adalah <a href="http://code.tutsplus.com/tutorials/making-the-perfect-wordpress-theme-how-to-code-well--wp-33397">mengkaji</a> dunia ThemeForest dan hasilkan jualan pertama di sana!</p>
+<p>(dan dengan itu kembalinya fokus kemahiran saya daripada backend kepada frontend/UX/UI!)</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/nilai-seorang-programmer.html">Nilai Seorang Programmer</a></h1>
+			<div class="date"><div>02 May 2014</div></div> 
+			<br/> <p>Bermula daripada sebuah artikel yang berkongsi tentang kerjaya seorang <a href="http://thecodist.com/article/programming_is_a_dead_end_job">programmer adalah kerjaya mati</a> kerana gaji programmer tidak akan meningkat seperti mana gaji seorang eksekutif dan pekerja tahap pengurusan.</p>
+<p><img alt="sebenarnya ia sangatlah mudah" src="../images/programmer-value.jpg" /></p>
+<p>Juga ada disentuh bahawa programmer hanya mempunyai dua pilihan iaitu untuk bertukar ke bahagian pengurusan atau mencari bahagia dalam menghasilkan software.</p>
+<p>Tulisan ini adalah untuk menerangkan sudut pandang yang betul kepada seorang programmer. Lebih-lebih lagi kepada ramai pelajar jurusan sains komputer yang berbakat dalam bidang programming dan sedang berkira-kira mahu menjadikan bidang programming sebagai kerjaya.</p>
+<p>Ya betul, kerja sebagai Programmer adalah kerjaya mati JIKA nilai yang anda hasilkan adalah semata-mata barisan-barisan kod komputer yang berfungsi mengikut sepesifikasi.</p>
+<p>Nilai seorang pekerja adalah bergantung kepada 2 faktor iaitu: 1) Production value, nilai yang bergantung kepada produktiviti pekerja tersebut dan 2) Scalable value, nilai yang mampu meningkat-gandakan keuntungan syarikat contohnya marketing dan sales.</p>
+<p>Kerjaya sebagai seorang programmer lebih kepada kerjaya seorang petani DAN kerjaya seorang ahli bomba. Programmer menghasilkan produk untuk dijual DAN juga menyelesaikan masalah (bug) yang terhasil dalam produk tersebut.</p>
+<p>Ya, dari sudut pandang tersebut nilai programmer ciput sahaja.</p>
+<p>Namun yang istimewa tentang programming adalah <em>kemahiran</em> programming tersebut adalah Scalable Value. Produk yang dijual hanya memberi untung sekali jualan sahaja. Tetapi programmer boleh menghasilkan software khusus untuk membantu jualan produk tadi. Programmer juga mampu menghasilkan software yang akan menjaga server dan menguruskan bug dengan berkesan. Programmer juga mampu menghasilkan software untuk mengurus jualan dengan lebih berkesan.</p>
+<p>Programmer yang menghasilkan produk tergolong dalam Production Value manakala Programmer menghasilkan software untuk meningkat-gandakan jualan adalah tergolong dalam Scalable Value.</p>
+<p>Dan Programmer yang kedua itulah yang nilainya tiada batasan kepada syarikat dan masyarakat.</p>
+<p>Pilih apakah software yang ingin kita hasilkan dengan berhati-hati kerana ia menentukan nilai kita sebagai programmer.</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/krisis-sebenar-proton-jenama.html">Krisis Sebenar Proton: Jenama</a></h1>
+			<div class="date"><div>01 May 2014</div></div> 
+			<br/> <p>Merujuk kepada artikel dalam blog livelifedrive.com yang secara ringkasnya melaporkan dr Mahathir berpendapat <a href="http://www.livelifedrive.com/malaysia/news/view/120834/mahatir-proton-needs-to-be-protected-perodua-making-things-difficult-for-proton?utm_source=facebook&amp;utm_medium=cpc">jualan kereta proton yang merudum</a> adalah berpunca daripada rakyat Malaysia yang tidak patriotik.</p>
+<p><img alt="Proton Rally Championship" src="http://protonmotorsports.files.wordpress.com/2010/04/team.jpg" /></p>
+<p>Sebagai pembaca dan pengikut industri permotoran tempatan (saya graduan jurusan automotif!), saya bersikap defensif atas isu ini. Proton kelihatan sangat parah dan banyak khabar angin mengatakan bahawa kerajaan perlu bantu Proton untuk terus kekal relevan.</p>
+<p>Maaf tetapi itu tidak patut.</p>
+<p>Kita perlu jelas dengan isu sebenar yang berlaku di sini. Dalam artikel tersebut juga ada dijelaskan tentang sikap rakyat Malaysia yang memandang tinggi kereta jenama eksport berbanding proton. Itu adalah sebab yang lebih munasabah.</p>
+<p>Sebagai pengguna, perkara pertama yang menjadi kriteria pilihan pembelian adalah harga yang mampu dimiliki, dan diikuti dengan jenama yang melambangkan pilihan peribadi.</p>
+<p>Contohnya jika bajet pembelian kereta adalah RM 70 000m, tidak mungkin pembeli akan membeli kerta berharga RM 100 000.</p>
+<p>Kemudian pembeli akan melihat pula senarai kereta yang harganya lingkungan RM 70 000 tadi. Antara pengeluar yang mempunyai kereta model pada harga tersebut adalah Proton, Toyota, Nissan dan Honda (ada juga chevrolet dan ford). Daripada senarai pengeluar tersebut, Proton bukanlah pilihan utama.</p>
+<p>Bukan kerana pembeli tidak patriotik. Tidak. Sikap patriotisme tidak lagi menjadi USP dan sebab untuk membeli di era ini. Era 80 an dan 90 an mungkin ya. Tetapi tidak sekarang.</p>
+<p>Pembeli membeli kerana marketing dan branding pengeluar lain lebih hebat dan berkesan berbanding branding kereta proton.</p>
+<p>Ya, semudah itu.</p>
+<p>Industri dan teknik menjual kereta era milenia ini tidak sama dengan era terdahulu. Kini semua jenama dan pengeluar mempunyai peluang yang sama. Kini semua jenama bertanding dalam kriteria yang sama: kekuatan branding.</p>
+<p>Dan kita perlu akui, jenama Proton tidak lagi seksi seperti satu masa dahulu.</p>
+<p>Satu sikap orang Malaysia khususnya orang melayu adalah, mereka menyanjung tinggi jenama luar. Mereka lebih memandang tinggi jika ada jenama luar yang hebat rupa-rupanya adalah milik tempatan. Seantero Malaysia akan berbicara tentang itu.</p>
+<p>Contoh yang terbaik adalah Petronas. Pengikut industri automotif sentiasa memandang Petronas lebih hebat daripada Proton bukan kerana kewangan, tetapi marketing dan branding Petronas yang menguasai litar lumba F1. Jenama Petronas ada di litar lumba antarabangsa!</p>
+<p>Maka salah satu perkara yang proton perlu lakukan adalah tingkatkan jenama dengan 'nampak' berjaya di arena antarabangsa. Mungkin menjadi rakan teknologi dalam litar lumba antarabangsa. Menjadi penyokong kepada teknologi baharu yang sedang meningkat naik (Tesla Motors). Iklan yang lebih mencengkam jiwa (ala-ala Petronas) dan banyak lagi.</p>
+<p>Ya, Proton hebat dari segi teknologi dan jasa kepada tanahair ini. Namun jenama yang sangat lemah seperti sekarang akan membunuh Proton sedikit demi sedikit. Proton akan mati kerana tiada usaha menunjukkan kehebatannya yang sebenar.</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/strategi-daripada-nilai-dan-budaya-37Signals.html">Strategi Daripada Nilai dan Budaya 37Signals</a></h1>
+			<div class="date"><div>16 Apr 2014</div></div> 
+			<br/> <p>Tiruvasi adalah jauh lebih mudah daripada berinovasi. Ia menjadi lebih mudah apabila nilai yang dimahukan terang-terangan didepan mata.</p>
+<p>37signals adalah sebuah syarikat pembangun produk internet yang sangat berjaya. Ia berjaya kerana banyak faktor, tetapi apa yang jelas adalah kerana mereka sangat menjaga 'nilai' dan 'budaya'.</p>
+<p>rujuk artikel terbaru tentang perubahan <a href="http://37signals.com">brand 37signals kepada Basecamp</a> dan kita akan nampak nilai dan budaya yang sangat dipegang mereka.</p>
+<p>Kita juga boleh kesan snapshot bagaimana syarikat itu berkembang daripada 2 sekawan menjadi 43 orang dengan nilai pulangan per kepala mencecah 1.3 juta USD bagi setiap pekerja.</p>
+<p>Ini adalah beberapa strategi yang dapat kita kutip daripada artikel tersebut:</p>
+<ol>
+<li>Nilai yang terbaik adalah yang memberi nilai kepada pelanggan.</li>
+<li>Gabungkan Marketing dan Recruitment hack: pilih satu teknologi yang sangat memudahkan hidup programmer, dan ia mestilah teknologi yang selari dengan nilai di atas. 37signals open sourcekan Ruby on Rails. Kita boleh cuba Golang!</li>
+<li>Bootstrap. Gunakan profit untuk berkembang. JANGAN ambil duit VC.</li>
+<li>Jangan takut buat perkara yang jarang dibuat oleh pemain lain dalam industri jika perkara tersebut adalah perkara yang betul dan selari dengan nilai kita.</li>
+<li>Tulis karangan seperti bercakap dengan audiens. Teka apa yang mereka akan tanya dan jawab soalan tersebut</li>
+<li>Produk mestilah yang mensasarkan mereka yang ada sedang 'kesakitan' dan juga mempunyai duit. Lebih baik jika produk tersebut bersifat 'profit center' berbanding 'cost center'.</li>
+<li>Marketing hack: kongsi segala perkara di blog. Apa maksud 'segala' = tentang customer, tentang pekerja, tentang sales, tentang marketing, tentang bisnes, tentang semuanya!</li>
+</ol>
+<hr />
+<p>Boleh cuba taktik ini: Buat web tools (MVC/Scaffolding/ACL) berdasarkan Golang. Termasuk sekali workflow standard: Code -> Test -> Repo -> Build -> Deploy</p>
+<p>Kenapa Golang? Because only A programmer use Golang. And A programmer will attract another A class programmer. This hack the recruiting and make it easy.</p>
+<p>Selari dengan itu guna webtools tadi untuk bina SME related SaaS. Fokus kepada 'profit center' (aktiviti berkuda/memanah) berbanding 'cost center' (pejalan kaki).</p>
+<p>Strategi Duit: Kumpul duit sampai berjuta, laburkan duit tu, dividen guna untuk tampung expense syarikat. Macam personal finance jugalah!</p>
+<p>Juga, always be at the end of the spectrum. Always pick the best, and the best is not the one with the most 'balance' because balance is indifferent, and indifferent spell doom to early stage companies.</p>
+<p>This is Teras Tech Grand Strategi!</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://localhost/blog/read/SOPRO.html">SOPRO (Standard Operating Procedure Pro)</a></h1>
+			<div class="date"><div>25 Mar 2014</div></div> 
+			<br/> <p>Software khas untuk menghasilkan SOP, tanpe perlun fikir tentang SOP!</p>
+<p>Dalam SOPRO, konsep SOP telah diperhalusi. SOP yang terlalu besar itu ibarat bangunan yang kukuh, dan batu-batanya adalah Checklist.</p>
+<p>Struktur SOP daripada paling asas ke yang paling atas adalah:</p>
+<ol>
+<li>Action (form or not).</li>
+<li>Checklist</li>
+<li>Board &amp; Column</li>
+<li>SOP</li>
+</ol>
+<p>Ini bermaksud, satu SOP terdiri daripada many Board, yang terdiri daripada Many Column, yang terdiri daripada banyak Checklist, yang terdiri daripada banyak Action yang mana mungkin mempunyai Form.</p>
+<p>Ini menjadikan Sistem SOP ini sangat fleksibel dan mudah difahami oleh semua orang. Setiap user yang ingin melakukan sesuatu akan merujuk kepada sistem dan mencari SOP yang berkaitan. Ia kemudian cukup sekadar mengikuti setiap checklist dan meletakkan update pada form yang sepatutnya.</p>
+<p>Seterusnya sistem yang akan menguruskan pembahagian tugas seperti yang telah disetting oleh pengurus SOP. Siapa yang perlu sambung kerja, apa status kerja tersebut.</p>
+<p>Yang paling menarik adalah Pengurus SOP boleh memilih beberapa action yang mahu di track sebagai Key Metrics. Key Metrics ini boleh dipaparkan dalam ruang laporan mengikut hari, minggu, bulan, quarter dan tahunan. </p>
+<p>Ini memudahkan reporting.</p>
+<p>Pengurus SOP juga boleh membina rules untuk alert. Contohnya apabila "action &lt;/>/==/&lt;=/>=/ (val,string,another action, formula of action)" then alert(user/group, 'message {action_name} {value}');</p>
+<p>Ini memudahkan monitoring!</p>
+<p>Yang paling menarik adalah Pengurus Sistem boleh menjadikan SOP yang telah dibina sebagai templat yang memudahkan pengguna baru untuk menggunakan da  membina SOP.</p>
+<p>Itulah projek yang paling menarik untuk dibuat: SOPD</p> 
+		</div>
+
+	</div>
+
+	<div class="navigation">
+		<h3>Artikel-artikel lain: <a href="#!/all" class="more">senarai artikel &raquo;</a></h3>
+		<ul id="nav"><li><a href="http://localhost/blog/read/remote-working.html">Remote Working Tools</a></li><li><a href="http://localhost/blog/read/rahsia-email-marketing.html">Sejarah Ringkas Dunia Web dan Rahsia Email Marketing</a></li><li><a href="http://localhost/blog/read/pengenalan-lean-startup.html">Lean Startup: Pengenalan</a></li><li><a href="http://localhost/blog/read/orchestra-preparation.html">Orchestra Preparation</a></li><li><a href="http://localhost/blog/read/membangunkan-satu-kitaran-eksperimen-B-M-L.html">Build - Measure - Learn : Membangunkan Satu Kitaran Eksperimen B-M-L</a></li><li><a href="http://localhost/blog/read/memastikan-setiap-hari-kita-menulis.html">Memastikan Setiap Hari Kita Menulis</a></li><li><a href="http://localhost/blog/read/measure-menyediakan-platform-eksperimen.html">Measure : Menyediakan Platform Eksperimen Produk</a></li><li><a href="http://localhost/blog/read/tentang-robotys.html">Tentang Robotys</a></li></ul>
+	</div>
+
+	<div class="subscribe">
+		<!-- Begin MailChimp Signup Form -->
+		<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			#mc_embed_signup{background:auto; clear:left; font:14px Helvetica,Arial,sans-serif; }
+			/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+			   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+		</style>
+		<div id="mc_embed_signup">
+			<form action="http://robotys.us8.list-manage.com/subscribe/post?u=6df1d81933d383e3275bb5515&amp;id=7ae6bb174b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<label for="mce-EMAIL">Subscribe untuk menerima update dan artikel khas</label>
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+			    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+			    <div style="position: absolute; left: -5000px;"><input type="text" name="b_6df1d81933d383e3275bb5515_7ae6bb174b" tabindex="-1" value=""></div>
+			    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+			</form>
+		</div>
+
+		<!--End mc_embed_signup-->
+	</div>
+
+	<div class="footer">
+		<p>Powered by <a href="http://github.com/robotys/saurus">Saurus</a> on <a href="http://github.com">Github</a> . All rights reserved &copy; 2014 Robotys.net.</p>
+	</div>
+
+</div></div>
+</body>
+</html>

@@ -1,29 +1,10 @@
 <?php
 	
-	// we can be sloppy for these phase. What phase? RESEARCH & PROTOTYPING phase ow yeah!
-
-	// we need to generate
-
-	// from mds
-
-	// everything that has YYYY-MM-DD in filename is good to go.
-
-	// the index array structure should be (but not comfirmed yet) as below:
-
-	// $index = array(
-	// 				'slug-after-hashbang'=>array('timestamp'=>23234234, 'title'=>'Title from that mada', 'excerpt'=>'first para without img'),
-	// 				'slug-after-hashbang'=>array('timestamp'=>23234234, 'title'=>'Title from that mada', 'excerpt'=>'first para without img'),
-	// 				'slug-after-hashbang'=>array('timestamp'=>23234234, 'title'=>'Title from that mada', 'excerpt'=>'first para without img'),
-	// 				'slug-after-hashbang'=>array('timestamp'=>23234234, 'title'=>'Title from that mada', 'excerpt'=>'first para without img'),
-	// 			);
-
-	// in json mind you. :)
 	
 	## Configurations:
 
 	CONST MARKDOWN_DIR = 'posts';
-
-
+	CONST FRONT_COUNT = 10;
 	error_reporting(E_ALL);
 	## MAIN
 
@@ -51,19 +32,22 @@
 	// generate read template
 	$read_template = file_get_contents('template/read.php');
 	$index_template = file_get_contents('template/index.php');
-
+	$index_post_template = '
+		<div class="post" id="{{post-id}}">
+			<h1><a href="{{permalink}}">{{title}}</a></h1>
+			<div class="date"><div>{{datetime}}</div></div> 
+			<br/> {{content}} 
+		</div>';
 	// generate index
 	// generate archive
 
 
-	// latest 10:
-	for($ii = 0; ($ii < 10 && $ii < count($posts)) ; $ii++){
-		$latest[] = $posts[$ii];
-
-		$li[] = '<li><a href="'.read_url($posts[$ii]['slug']).'">'.$posts[$ii]['title'].'</a></li>';
+	// latest for front and list:
+	for($ii = 0; ($ii < FRONT_COUNT && $ii < count($posts)) ; $ii++){
+		$latest[] = '<li><a href="'.read_url($posts[$ii]['slug']).'">'.$posts[$ii]['title'].'</a></li>';
 	}
 	// latest list
-	$latest_list = implode($li);
+	$latest_list = implode($latest);
 
 	include('parsedown.php');
 	$Parsedown = new Parsedown();
@@ -71,6 +55,12 @@
 	foreach($posts as $i=>$post){
 		$md = file_get_contents('posts/'.($post['filename']));
 		$md = str_replace('(images/', '(../images/', $md);
+		// buang first line because it is a title line, we already has title
+
+		$exp = explode("\n", $md);
+		unset($exp[0]);
+		$md = implode("\n", $exp);
+
 		// $md = str_replace('images/', '\'../images/', $md);
 		// dumper(strlen($md));
 		$prev = $next = '';
@@ -82,27 +72,41 @@
 		if(array_key_exists(($i+1), $posts) !== FALSE){
 			$next = '<a href="'.read_url($posts[($i+1)]['slug']).'">'.$posts[($i+1)]['title'].'</a>';
 		}
-
 		$vars = $post;
 		$vars['latest_list'] = $latest_list;
 		$vars['prev'] = $prev;
 		$vars['next'] = $next;
 		$vars['title'] = $post['title'];
 		$vars['permalink'] = read_url($post['slug']);
-		$vars['datetime'] = date('d M Y');
+		$vars['datetime'] = date('d M Y', $post['timestamp']);
 		$vars['img'] = get_first_image($md);
 		$vars['content'] = $Parsedown->text($md);
-		$vars['about'] = get_domain().'/read/tentang-robotys.html';
+		$vars['home_link'] = get_domain();
 
 		$template = $read_template;
-
+		$content = $index_post_template;
 		foreach($vars as $key=>$value){
 			$template = str_replace('{{'.$key.'}}', $value, $template);
+			$content = str_replace('{{'.$key.'}}', $value, $content);
 		}
 
 		file_put_contents('read/'.$vars['slug'].'.html', $template);
+
+		// contents untuk index
+		if($i < FRONT_COUNT) $all_contents[] = $content;
 	}
 
+	for($i = 0; $i < count($posts); $i++){
+		if(array_key_exists($i, $latest) === FALSE) $other[] = '<li><a href="'.read_url($posts[$i]['slug']).'">'.$posts[$i]['title'].'</a></li>';
+	}
+
+	$others_list = implode($other);
+	$contents = implode($all_contents);
+	// gen index
+	$index = str_replace('{{contents}}', $contents, $index_template);
+	$index = str_replace('{{others_list}}', $others_list, $index);
+
+	file_put_contents('read/index.html', $index);
 
 	echo 'done!';
 
