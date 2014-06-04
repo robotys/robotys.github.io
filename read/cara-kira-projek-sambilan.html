@@ -10,29 +10,7 @@
 
 
 	<script src="../assets/jquery.min.js"></script>
-
-
-	<script>
-
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-29977976-1', 'robotys.net');
-		ga('send', 'pageview');
-
-
-		// to track all AJAX request, yep, we use ajax for navigation.
-		(function ($) {
-			// Log all jQuery AJAX requests to Google Analytics
-			$(document).ajaxSend(function(event, xhr, settings){ 
-				ga('create', 'UA-29977976-1', 'robotys.net');
-				ga('send','pageview', settings.url.pathname);
-			});
-		})(jQuery);
-
-	</script>
+	<script src="../assets/ga.js"></script>
 
 	<script type="text/javascript">
 		var nav_template = '<li><a href="http://localhost/blog/read/cara-kira-projek-sambilan.html">Cara Kira Projek Kerja Sambilan</a></li>';
@@ -181,7 +159,7 @@
 	</div>
 
 	<div class="navigation">
-		<h3>Artikel-artikel lain: <a href="read/all.html" class="more">senarai artikel &raquo;</a></h3>
+		<h3>Artikel-artikel lain: <a href="../read/all.html" class="more">senarai artikel &raquo;</a></h3>
 		<ul id="nav"><li><a href="http://localhost/blog/read/strategi-menulis-paling-mudah.html">Strategi Menulis Paling Mudah</a></li><li><a href="http://localhost/blog/read/falsafah-membina-themes-wordpress.html">Panduan Membina Themes Wordpress</a></li><li><a href="http://localhost/blog/read/freelancer-bukan-buruh-digital.html">Freelancer Bukan Buruh Digital</a></li><li><a href="http://localhost/blog/read/taktik-jual-themes-wordpress.html">Taktik Jual Themes Wordpress</a></li><li><a href="http://localhost/blog/read/cara-kira-projek-sambilan.html">Cara Kira Projek Kerja Sambilan</a></li><li><a href="http://localhost/blog/read/strategi-2015.html">Pelajaran Hidup 2015 dan Langkah Seterusnya</a></li><li><a href="http://localhost/blog/read/nilai-seorang-programmer.html">Nilai Seorang Programmer</a></li><li><a href="http://localhost/blog/read/krisis-sebenar-proton-jenama.html">Krisis Sebenar Proton: Jenama</a></li><li><a href="http://localhost/blog/read/strategi-daripada-nilai-dan-budaya-37Signals.html">Strategi Daripada Nilai dan Budaya 37Signals</a></li><li><a href="http://localhost/blog/read/SOPRO.html">SOPRO (Standard Operating Procedure Pro)</a></li></ul>
 	</div>
 

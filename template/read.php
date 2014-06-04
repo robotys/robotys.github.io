@@ -10,29 +10,7 @@
 
 
 	<script src="../assets/jquery.min.js"></script>
-
-
-	<script>
-
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-29977976-1', 'robotys.net');
-		ga('send', 'pageview');
-
-
-		// to track all AJAX request, yep, we use ajax for navigation.
-		(function ($) {
-			// Log all jQuery AJAX requests to Google Analytics
-			$(document).ajaxSend(function(event, xhr, settings){ 
-				ga('create', 'UA-29977976-1', 'robotys.net');
-				ga('send','pageview', settings.url.pathname);
-			});
-		})(jQuery);
-
-	</script>
+	<script src="../assets/ga.js"></script>
 
 	<script type="text/javascript">
 		var nav_template = '<li><a href="{{permalink}}">{{title}}</a></li>';
@@ -87,7 +65,7 @@
 	</div>
 
 	<div class="navigation">
-		<h3>Artikel-artikel lain: <a href="read/all.html" class="more">senarai artikel &raquo;</a></h3>
+		<h3>Artikel-artikel lain: <a href="../read/all.html" class="more">senarai artikel &raquo;</a></h3>
 		<ul id="nav">{{latest_list}}</ul>
 	</div>
 
