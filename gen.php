@@ -44,7 +44,7 @@
 		<div class="post" id="{{post-id}}">
 			<h1><a href="{{permalink}}">{{title}}</a></h1>
 			<div class="date"><div>{{datetime}}</div></div> 
-			<br/> {{excerpt}} 
+			<br/> {{excerpt_html}} 
 		</div>';
 	// generate index
 	// generate archive
@@ -91,7 +91,7 @@
 		$vars['img'] = get_first_image($md);
 		$vars['content'] = $Parsedown->text($md);
 		$vars['home_link'] = get_domain();
-		$vars['excerpt'] = $Parsedown->text($vars['excerpt']);
+		$vars['excerpt_html'] = $Parsedown->text($vars['excerpt']);
 
 		$template = $read_template;
 		$content = $index_post_template;
