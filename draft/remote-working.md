@@ -15,7 +15,7 @@ Sebab untuk remote working:
 Asas remote working:
 
 - 'All in'. Semua kena commit. Tak boleh separuh-separuh
-- Profesional (amanah, komunikasi 2 hala, usaha)
+- Hanya jika pekerja itu Profesional (amanah, komunikasi 2 hala, usaha)
 - Percaya bahawa semua ahli organisasi mahukan yang terbaik
 - Internet yang bagus pada semua ahli organisasi
 - Keputusan berasaskan Data
