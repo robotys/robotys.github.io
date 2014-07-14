@@ -84,14 +84,14 @@
 <pre><code>$ gksudo gedit /etc/apache2/sites-available/template.conf</code></pre>
 <p>Aplikasi dengan rupa ala-ala notepad akan muncul. Copy dan paste teks berikut:</p>
 <pre><code>&lt;VirtualHost *:80&gt;
-    ServerName **template.dev**
+    ServerName template.dev
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/html/**template**
+    DocumentRoot /var/www/html/template
 
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.combined log
 
-    &lt;Directory /var/www/html/**template/**&gt;
+    &lt;Directory /var/www/html/template/&gt;
         AllowOverride All
         Order allow,deny
         allow from all
@@ -109,18 +109,18 @@
 <p>Dan ubahsuai mengikut nota seperti berikut:</p>
 <pre><code>&lt;VirtualHost *:80&gt;
     # ServerName adalah domainname yang kita mahu guna untuk access daripada browser. Saya mahu guna http://blog.dev
-    ServerName **blog.dev**
+    ServerName blog.dev
 
     ServerAdmin webmaster@localhost
 
     # DocumentRoot adalah folder dimana letaknya kod-kod untuk projek kita. Saya letak dalam folder blog:
-    DocumentRoot /var/www/html/**blog**
+    DocumentRoot /var/www/html/blog
 
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.combined log
 
     # Ini adalah setting untuk access dan juga htaccess. Tukar kepada folder projek kita. Pastikan hujungnya ada slash '/'
-    &lt;Directory /var/www/html/**blog/**&gt;
+    &lt;Directory /var/www/html/blog/&gt;
         AllowOverride All
         Order allow,deny
         allow from all

@@ -53,14 +53,14 @@ Kemudian kita edit fail tersebut dengan menggunakan aplikasi gedit dengan permis
 Aplikasi dengan rupa ala-ala notepad akan muncul. Copy dan paste teks berikut:
 
 	<VirtualHost *:80>
-		ServerName **template.dev**
+		ServerName template.dev
 		ServerAdmin webmaster@localhost
-		DocumentRoot /var/www/html/**template**
+		DocumentRoot /var/www/html/template
 		
 		ErrorLog ${APACHE_LOG_DIR}/error.log
 		CustomLog ${APACHE_LOG_DIR}/access.combined log
 
-		<Directory /var/www/html/**template/**>
+		<Directory /var/www/html/template/>
 		    AllowOverride All
 		    Order allow,deny
 		    allow from all
@@ -89,18 +89,18 @@ Dan ubahsuai mengikut nota seperti berikut:
 
 	<VirtualHost *:80>
 		# ServerName adalah domainname yang kita mahu guna untuk access daripada browser. Saya mahu guna http://blog.dev
-		ServerName **blog.dev**
+		ServerName blog.dev
 
 		ServerAdmin webmaster@localhost
 		
 		# DocumentRoot adalah folder dimana letaknya kod-kod untuk projek kita. Saya letak dalam folder blog:
-		DocumentRoot /var/www/html/**blog**
+		DocumentRoot /var/www/html/blog
 		
 		ErrorLog ${APACHE_LOG_DIR}/error.log
 		CustomLog ${APACHE_LOG_DIR}/access.combined log
 
 		# Ini adalah setting untuk access dan juga htaccess. Tukar kepada folder projek kita. Pastikan hujungnya ada slash '/'
-		<Directory /var/www/html/**blog/**>
+		<Directory /var/www/html/blog/>
 		    AllowOverride All
 		    Order allow,deny
 		    allow from all
