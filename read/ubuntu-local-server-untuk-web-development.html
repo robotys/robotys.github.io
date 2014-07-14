@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Setting LocalServer (Apace-MySql-PHP) untuk Web Development dengan Ubuntu &bull; Robotys.net &bull;</title>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<meta name="description" content="Ya, ini adalah tutorial ringkas (lebih kepada nota untuk diri sendiri) tentang langkah-langkah yang perlu diambil ke atas sebuah komputer dengan OS Ubuntu untuk memudahkan proses pembangunan laman web.">
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+	<link href="../assets/style.css" rel="stylesheet" type="text/css" >
+
+
+	<script src="../assets/jquery.min.js"></script>
+	<script src="../assets/ga.js"></script>
+
+	<script type="text/javascript">
+
+		$(window).scroll(function(e){
+			parallax();
+		});
+
+		function parallax(){
+			var scrolled = $(window).scrollTop();
+			$('.bg').css('top', -(scrolled * 0.2) + 'px');
+		}
+	</script>
+
+	<!-- 
+	<script src="assets/marked.js"></script>
+	<script src="assets/saurus.js"></script>
+ -->
+</head>
+<body>
+<div class="bg"></div>
+<div class="center"><div class="wrapper">
+
+	<div class="header">
+		<img src="../images/robotys-net-logo-bulat.jpg" style="width: 80px; border-radius: 50%; margin-bottom: -20px; border: 3px #FFF solid; box-shadow: 0px 0px 6px #888;"> 
+		<br/><br/>
+		<a href="../read" class="masthead">robotys.net</a> <br/>
+		<p class="subtitle">Web &bull; Teknologi &bull; Internet</p>
+		<p>Robotys adalah persona dalam talian milik Izwan Wahab, <a href="../read/tentang-robotys.html">juruaturcara laman web</a> yang giat berkongsi tentang teknologi dalam kehidupan dan juga sistem dalam bisnes. Blog ini adalah ibarat nota beliau kepada diri sendiri agar mudah dingati pada masa hadapan.</p>
+
+		<p>
+			<a title="facebook" href="http://facebook.com/robotys"><img src="../images/icon_facebook.png"/></a> &nbsp; &nbsp;
+			<a title="github" href="http://github.com/robotys"><img src="../images/icon_github.png"/></a> &nbsp; &nbsp;
+			<a title="twitter" href="http://twitter.com/robotys"><img src="../images/icon_twitter.png"/></a>
+<!-- <a class="instagram_metro tsc_social_metro" title="instagram" href="#">instagram</a> -->
+		</p>
+	</div>
+
+	<div class="content" id="content_wrapper">
+		<!-- auto generated content will be here -->
+		<!-- <div class="spinner" style="width: 100%; box-sizing: border-box; text-align: center; background: #fff; padding: 15px;">
+			loading article <br/>
+			<img src="images/loading.gif"/>
+		</div> -->
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://blog.dev/read/ubuntu-local-server-untuk-web-development.html">Setting LocalServer (Apace-MySql-PHP) untuk Web Development dengan Ubuntu</a></h1>
+			<div class="date"><div>12 Jul 2014</div></div> 
+			<br/> <p>Ya, ini adalah tutorial ringkas (lebih kepada nota untuk diri sendiri) tentang langkah-langkah yang perlu diambil ke atas sebuah komputer dengan OS Ubuntu untuk memudahkan proses pembangunan laman web.</p>
+<p><img alt="Ubuntu" src="../images/webdev.png" /></p>
+<p>Mengapa Ubuntu? Kerana ianya linux dan kebanyakan server online adalah linux dengan flavor Ubuntu. Semakin dekat spesifikasi development server dengan production server semakin bagus kerana semakin kurang bugs yang akan muncul.</p>
+<p>Langkah awal sebelum mula adalah: Install Ubuntu Desktop (terbaru adalah 14.04 LTS semasa artikel ini ditulis) dan ikut banyak tutorial yang ada di online untuk install Apache2 MySQL dan juga PHP. Ia cukup mudah.</p>
+<p>Pastikan semua telah diinstall dengan baik dengan cara buka laman web <a href="http://localhost">http://localhost</a> di browser kita.</p>
+<p>Apabila kita ingin menghasilkan projek baru, kita perlu menyediakan tapak coding untuk projek website tersebut.</p>
+<p>Berikut adalah langkah-langkahnya:</p>
+<h2>1) Buat Folder baru di Desktop</h2>
+<p>Saya suka biarkan koding untuk semua projek saya dalam satu folder khas di Desktop. Ini memudahkan saya mencapai kod tersebut dan mudah untuk kita gunakan dan ejas assets yang diperlukan.</p>
+<p>Buka Terminal dan run kod berikut:</p>
+<pre><code>$ mkdir ~/Desktop/localhost/blog</code></pre>
+<p>Semak dan pastikan folder tersebut telah muncul di desktop.</p>
+<h2>2) Buat shortcut ke folder di desktop tadi di dalam folder /var/www/html</h2>
+<p>Ini adalah kod yang spesifik. Kita mahu shortcut ke folder blog di dalam folder html. Bukan sebaliknya. Jika sebaliknya nanti kita tidak boleh edit kod projek kita kerana ianya milik root (semua fail dalam folder html adalah milik root/apache).</p>
+<p>Run kod berikut:</p>
+<pre><code>$ ln -s ~/Desktop/localhost/blog /var/www/html</code></pre>
+<p>Semak untuk pastikan shortcut telah dibina dengan lihat senarai isi dalam folder html:</p>
+<pre><code>$ ls /var/www/html</code></pre>
+<h2>3) Setup VirtualHost Config untuk Apache</h2>
+<p>VirtualHost adalah ibarat dalam satu server Apache kita boleh run banyak projek website bawah setting masing-masing. Antara setting yang penting dalam config adalah servername, documentroot dan juga allow access.</p>
+<p>Jika ini adalah fresh install, kita perlu sediakan satu template config terlebih dahulu.</p>
+<p>Bina satu fail text seperti berikut:</p>
+<pre><code>$ touch /etc/apache2/sites-available/template.conf</code></pre>
+<p>Kemudian kita edit fail tersebut dengan menggunakan aplikasi gedit dengan permission sebagai root:</p>
+<pre><code>$ gksudo gedit /etc/apache2/sites-available/template.conf</code></pre>
+<p>Aplikasi dengan rupa ala-ala notepad akan muncul. Copy dan paste teks berikut:</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+    ServerName **template.dev**
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/**template**
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.combined log
+
+    &lt;Directory /var/www/html/**template/**&gt;
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre>
+<p>Baik, save fail tersebut (ctrl+S) dan tutup aplikasi gedit tadi.</p>
+<p>Setelah ada template barulah kita boleh duplicate untuk projek website blog kita tadi:</p>
+<pre><code>$ sudo cp /etc/apache2/sites-available/template.conf /etc/apache2/sites-available/blog.conf</code></pre>
+<p>Perkara yang paling penting di sini adalah pastikan setiap fail config kita menggunakan filetype: .conf . Jika tidak apache tidak akan kenal dan website kita tidak boleh diakses.</p>
+<h2>4) Edit Config mengikut Projek Kita</h2>
+<p>Setiap projek ada perbezaan. Paling biasa adalah segala kod bagi satu-satu projek biasanya diletak dalam satu folder. Maka kita perlu pastikan apache jumpa kod yang betul apabila domain namenya dipanggil.</p>
+<p>Untuk berbuat demikian, kita perlu edit config setting tadi.</p>
+<p>Buka fail config menggunakan gedit:</p>
+<pre><code>$ gksudo gedit /etc/apache2/sites-available/blog.conf</code></pre>
+<p>Dan ubahsuai mengikut nota seperti berikut:</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+    # ServerName adalah domainname yang kita mahu guna untuk access daripada browser. Saya mahu guna http://blog.dev
+    ServerName **blog.dev**
+
+    ServerAdmin webmaster@localhost
+
+    # DocumentRoot adalah folder dimana letaknya kod-kod untuk projek kita. Saya letak dalam folder blog:
+    DocumentRoot /var/www/html/**blog**
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.combined log
+
+    # Ini adalah setting untuk access dan juga htaccess. Tukar kepada folder projek kita. Pastikan hujungnya ada slash '/'
+    &lt;Directory /var/www/html/**blog/**&gt;
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre>
+<p>Setelah siap ubahsuai kita save (ctrl+s) dan tutup gedit.</p>
+<h2>5) Enable site untuk diakses</h2>
+<p>Kita perlu activate config tadi supaya Apache boleh mengesannya secara live di locaserver. Run command berikut:</p>
+<pre><code>$ sudo a2ensite blog.conf</code></pre>
+<h2>6) Edit Host File untuk Locaserver</h2>
+<p>Kemudian kita perlu mengubahsuai hosts file untuk memastikan komputer kita memanggil server Apache dalam komputer kita apabila kita melayari <a href="http://blog.dev">http://blog.dev</a></p>
+<p>Buka fail hosts dengan gedit:</p>
+<pre><code>$ gksudo gedit /etc/hosts</code></pre>
+<p>Dan tambah kod ini di barisan baru:</p>
+<pre><code>127.0.0.1 blog.dev</code></pre>
+<p>Save dan tutup gedit.</p>
+<h2>7) Restart Apache</h2>
+<p>Apabila semua sudah siap, kita perlu restart/reload servis apache untuk membolehkan apache menggunakan config projek kita yang terbaru.</p>
+<pre><code>$ sudo service apache2 restart</code></pre>
+<p>Dan kini, apabila kita pergi ke <a href="http://blog.dev">http://blog.dev</a> di browser kita, kita dapat lihat segala kod php kita berjalan dengan lancar.</p>
+<p>Boleh cuba buat fail baru dalam folder projek kita untuk memastikannya:</p>
+<ol>
+<li>Pergi ke dalam folder blog di desktop.</li>
+<li>klik kanan dan pilih menu 'New Document'</li>
+<li>letak nama dail tersebut 'info.php'</li>
+<li>Masukkan kod berikut dalam fail tadi: <code>&lt;?php phpinfo();?&gt;</code></li>
+<li>Save dan reload page <a href="http://blog.dev">http://blog.dev</a> di browser.</li>
+</ol>
+<p>Jika ia menjadi maka paparan maklumat PHP akan muncul dengan lengkap.</p>
+<p>Harapnya ia menjadilah. Jika tidak kita perlu troubleshoot atau ulang semula langkah-langkah di atas. TT___TT</p> 
+		</div>
+	</div>
+
+	<div class="navigation">
+		<h3>Artikel Baru: </h3>
+		<ul id="nav">
+			<li><a href="http://blog.dev/read/ubuntu-local-server-untuk-web-development.html">Setting LocalServer (Apace-MySql-PHP) untuk Web Development dengan Ubuntu</a></li><li><a href="http://blog.dev/read/strategi-menulis-paling-mudah.html">Strategi Menulis Paling Mudah</a></li><li><a href="http://blog.dev/read/falsafah-membina-themes-wordpress.html">Panduan Membina Themes Wordpress</a></li><li><a href="http://blog.dev/read/freelancer-bukan-buruh-digital.html">Freelancer Bukan Buruh Digital</a></li><li><a href="http://blog.dev/read/taktik-jual-themes-wordpress.html">Taktik Jual Themes Wordpress</a></li><li><a href="http://blog.dev/read/cara-kira-projek-sambilan.html">Cara Kira Projek Kerja Sambilan</a></li><li><a href="http://blog.dev/read/strategi-2014.html">Pelajaran Hidup 2014 dan Langkah Seterusnya</a></li><li><a href="http://blog.dev/read/nilai-seorang-programmer.html">Nilai Seorang Programmer</a></li><li><a href="http://blog.dev/read/krisis-sebenar-proton-jenama.html">Krisis Sebenar Proton: Jenama</a></li><li><a href="http://blog.dev/read/strategi-daripada-nilai-dan-budaya-37Signals.html">Strategi Daripada Nilai dan Budaya 37Signals</a></li>
+			<li><a href="../read/all.html" class="more">senarai artikel &raquo;</a></li>
+		</ul>
+	</div>
+
+	<div class="subscribe">
+		
+		<div id="mc_embed_signup">
+			<form action="http://robotys.us8.list-manage.com/subscribe/post?u=6df1d81933d383e3275bb5515&amp;id=7ae6bb174b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<label for="mce-EMAIL">Subscribe untuk menerima update dan artikel khas</label>
+				<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+			    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+			    <div style="position: absolute; left: -5000px;"><input type="text" name="b_6df1d81933d383e3275bb5515_7ae6bb174b" tabindex="-1" value=""></div>
+			    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+			</form>
+		</div>
+
+		<!--End mc_embed_signup-->
+	</div>
+
+	<div class="footer">
+		<p>Powered by <a href="http://github.com/robotys/saurus">Saurus</a> on <a href="http://github.com">Github</a> . All rights reserved &copy; 2014 Robotys.net.</p>
+	</div>
+
+</div></div>
+</body>
+</html>

@@ -56,7 +56,105 @@
 		</div> -->
 		
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/strategi-menulis-paling-mudah.html">Strategi Menulis Paling Mudah</a></h1>
+			<h1><a href="http://blog.dev/read/ubuntu-local-server-untuk-web-development.html">Setting LocalServer (Apace-MySql-PHP) untuk Web Development dengan Ubuntu</a></h1>
+			<div class="date"><div>12 Jul 2014</div></div> 
+			<br/> <p>Ya, ini adalah tutorial ringkas (lebih kepada nota untuk diri sendiri) tentang langkah-langkah yang perlu diambil ke atas sebuah komputer dengan OS Ubuntu untuk memudahkan proses pembangunan laman web.</p>
+<p><img alt="Ubuntu" src="../images/webdev.png" /></p>
+<p>Mengapa Ubuntu? Kerana ianya linux dan kebanyakan server online adalah linux dengan flavor Ubuntu. Semakin dekat spesifikasi development server dengan production server semakin bagus kerana semakin kurang bugs yang akan muncul.</p>
+<p>Langkah awal sebelum mula adalah: Install Ubuntu Desktop (terbaru adalah 14.04 LTS semasa artikel ini ditulis) dan ikut banyak tutorial yang ada di online untuk install Apache2 MySQL dan juga PHP. Ia cukup mudah.</p>
+<p>Pastikan semua telah diinstall dengan baik dengan cara buka laman web <a href="http://localhost">http://localhost</a> di browser kita.</p>
+<p>Apabila kita ingin menghasilkan projek baru, kita perlu menyediakan tapak coding untuk projek website tersebut.</p>
+<p>Berikut adalah langkah-langkahnya:</p>
+<h2>1) Buat Folder baru di Desktop</h2>
+<p>Saya suka biarkan koding untuk semua projek saya dalam satu folder khas di Desktop. Ini memudahkan saya mencapai kod tersebut dan mudah untuk kita gunakan dan ejas assets yang diperlukan.</p>
+<p>Buka Terminal dan run kod berikut:</p>
+<pre><code>$ mkdir ~/Desktop/localhost/blog</code></pre>
+<p>Semak dan pastikan folder tersebut telah muncul di desktop.</p>
+<h2>2) Buat shortcut ke folder di desktop tadi di dalam folder /var/www/html</h2>
+<p>Ini adalah kod yang spesifik. Kita mahu shortcut ke folder blog di dalam folder html. Bukan sebaliknya. Jika sebaliknya nanti kita tidak boleh edit kod projek kita kerana ianya milik root (semua fail dalam folder html adalah milik root/apache).</p>
+<p>Run kod berikut:</p>
+<pre><code>$ ln -s ~/Desktop/localhost/blog /var/www/html</code></pre>
+<p>Semak untuk pastikan shortcut telah dibina dengan lihat senarai isi dalam folder html:</p>
+<pre><code>$ ls /var/www/html</code></pre>
+<h2>3) Setup VirtualHost Config untuk Apache</h2>
+<p>VirtualHost adalah ibarat dalam satu server Apache kita boleh run banyak projek website bawah setting masing-masing. Antara setting yang penting dalam config adalah servername, documentroot dan juga allow access.</p>
+<p>Jika ini adalah fresh install, kita perlu sediakan satu template config terlebih dahulu.</p>
+<p>Bina satu fail text seperti berikut:</p>
+<pre><code>$ touch /etc/apache2/sites-available/template.conf</code></pre>
+<p>Kemudian kita edit fail tersebut dengan menggunakan aplikasi gedit dengan permission sebagai root:</p>
+<pre><code>$ gksudo gedit /etc/apache2/sites-available/template.conf</code></pre>
+<p>Aplikasi dengan rupa ala-ala notepad akan muncul. Copy dan paste teks berikut:</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+    ServerName **template.dev**
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/**template**
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.combined log
+
+    &lt;Directory /var/www/html/**template/**&gt;
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre>
+<p>Baik, save fail tersebut (ctrl+S) dan tutup aplikasi gedit tadi.</p>
+<p>Setelah ada template barulah kita boleh duplicate untuk projek website blog kita tadi:</p>
+<pre><code>$ sudo cp /etc/apache2/sites-available/template.conf /etc/apache2/sites-available/blog.conf</code></pre>
+<p>Perkara yang paling penting di sini adalah pastikan setiap fail config kita menggunakan filetype: .conf . Jika tidak apache tidak akan kenal dan website kita tidak boleh diakses.</p>
+<h2>4) Edit Config mengikut Projek Kita</h2>
+<p>Setiap projek ada perbezaan. Paling biasa adalah segala kod bagi satu-satu projek biasanya diletak dalam satu folder. Maka kita perlu pastikan apache jumpa kod yang betul apabila domain namenya dipanggil.</p>
+<p>Untuk berbuat demikian, kita perlu edit config setting tadi.</p>
+<p>Buka fail config menggunakan gedit:</p>
+<pre><code>$ gksudo gedit /etc/apache2/sites-available/blog.conf</code></pre>
+<p>Dan ubahsuai mengikut nota seperti berikut:</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+    # ServerName adalah domainname yang kita mahu guna untuk access daripada browser. Saya mahu guna http://blog.dev
+    ServerName **blog.dev**
+
+    ServerAdmin webmaster@localhost
+
+    # DocumentRoot adalah folder dimana letaknya kod-kod untuk projek kita. Saya letak dalam folder blog:
+    DocumentRoot /var/www/html/**blog**
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.combined log
+
+    # Ini adalah setting untuk access dan juga htaccess. Tukar kepada folder projek kita. Pastikan hujungnya ada slash '/'
+    &lt;Directory /var/www/html/**blog/**&gt;
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre>
+<p>Setelah siap ubahsuai kita save (ctrl+s) dan tutup gedit.</p>
+<h2>5) Enable site untuk diakses</h2>
+<p>Kita perlu activate config tadi supaya Apache boleh mengesannya secara live di locaserver. Run command berikut:</p>
+<pre><code>$ sudo a2ensite blog.conf</code></pre>
+<h2>6) Edit Host File untuk Locaserver</h2>
+<p>Kemudian kita perlu mengubahsuai hosts file untuk memastikan komputer kita memanggil server Apache dalam komputer kita apabila kita melayari <a href="http://blog.dev">http://blog.dev</a></p>
+<p>Buka fail hosts dengan gedit:</p>
+<pre><code>$ gksudo gedit /etc/hosts</code></pre>
+<p>Dan tambah kod ini di barisan baru:</p>
+<pre><code>127.0.0.1 blog.dev</code></pre>
+<p>Save dan tutup gedit.</p>
+<h2>7) Restart Apache</h2>
+<p>Apabila semua sudah siap, kita perlu restart/reload servis apache untuk membolehkan apache menggunakan config projek kita yang terbaru.</p>
+<pre><code>$ sudo service apache2 restart</code></pre>
+<p>Dan kini, apabila kita pergi ke <a href="http://blog.dev">http://blog.dev</a> di browser kita, kita dapat lihat segala kod php kita berjalan dengan lancar.</p>
+<p>Boleh cuba buat fail baru dalam folder projek kita untuk memastikannya:</p>
+<ol>
+<li>Pergi ke dalam folder blog di desktop.</li>
+<li>klik kanan dan pilih menu 'New Document'</li>
+<li>letak nama dail tersebut 'info.php'</li>
+<li>Masukkan kod berikut dalam fail tadi: <code>&lt;?php phpinfo();?&gt;</code></li>
+<li>Save dan reload page <a href="http://blog.dev">http://blog.dev</a> di browser.</li>
+</ol>
+<p>Jika ia menjadi maka paparan maklumat PHP akan muncul dengan lengkap.</p>
+<p>Harapnya ia menjadilah. Jika tidak kita perlu troubleshoot atau ulang semula langkah-langkah di atas. TT___TT</p> 
+		</div>
+		<div class="post" id="{{post-id}}">
+			<h1><a href="http://blog.dev/read/strategi-menulis-paling-mudah.html">Strategi Menulis Paling Mudah</a></h1>
 			<div class="date"><div>03 Jun 2014</div></div> 
 			<br/> <p>Hari ini (3 Jun 2014) saya dijemput sebagai penceramah jemputan di Jabatan Perdana Menteri untuk berkongsi tentang penulisan portal.</p>
 <p>Saya berkongsi khusus tentang cara yang mudah untuk membantu kita menulis setiap hari. Antara strategi yang kita boleh gunakan adalah:</p>
@@ -103,7 +201,7 @@
 <p>Itulah perkara yang saya sendiri amalkan untuk menulis setiap hari (atau semasa banyak idea. :))</p> 
 		</div>
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/falsafah-membina-themes-wordpress.html">Panduan Membina Themes Wordpress</a></h1>
+			<h1><a href="http://blog.dev/read/falsafah-membina-themes-wordpress.html">Panduan Membina Themes Wordpress</a></h1>
 			<div class="date"><div>26 May 2014</div></div> 
 			<br/> <p>Wordpress themes telah banyak membantu pengguna wordpress dan juga ramai peniaga yang memerlukan cara mudah, pantas dan murah untuk memiliki alamn web sendiri. Samada melalui freelancer ataupun marketplace yang banyak ada di pasaran, tidak dapat disangkal bahawa jasa Wordpress Themes sangat besar kepada pengguna internet.</p>
 <p>Namun dengan lambakan themes wordpress di pasaran, terdapat lebih banyak themes yang tidak bagus berbanding yang bagus.</p>
@@ -134,7 +232,7 @@
 <p>Itulah 4 perkara penting yang harus diambil kira jika mahu menghasilkan wordpress themes yang digunakan oleh ramai orang dan dikagumi oleh ramai web developer!</p> 
 		</div>
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/freelancer-bukan-buruh-digital.html">Freelancer Bukan Buruh Digital</a></h1>
+			<h1><a href="http://blog.dev/read/freelancer-bukan-buruh-digital.html">Freelancer Bukan Buruh Digital</a></h1>
 			<div class="date"><div>18 May 2014</div></div> 
 			<br/> <p>Suka saya mengulas ayat ini secara longgar yang ditulis oleh rakan seperjuangan di <a href="http://rumbia.my/bmc-untuk-freelancer/">rumbia.my</a>:</p>
 <pre><code>Kita freelancer, seorang professional dan bukannya buruh digital.</code></pre>
@@ -177,7 +275,7 @@
 <p>Jangan harapkan klien untuk membuat pilihan. Biarkan kuasa memilih itu ditangan kita sebagai freelancer agar kita lebih tenang dan tidak tertekan dikemudian hari.</p> 
 		</div>
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/taktik-jual-themes-wordpress.html">Taktik Jual Themes Wordpress</a></h1>
+			<h1><a href="http://blog.dev/read/taktik-jual-themes-wordpress.html">Taktik Jual Themes Wordpress</a></h1>
 			<div class="date"><div>16 May 2014</div></div> 
 			<br/> <p>Projek seterusnya adalah jual themes wordpress. Ini untuk offset kerja active income (freelance) kepada passive income (royalty). Jadi secara teori, apabila projek ini berjaya, kita akan ada lebih banyak masa untuk perkara lain.</p>
 <p>Berikut adalah benchmark dan rasionalnya:</p>
@@ -208,7 +306,7 @@
 <p>Kita juga hanya perlu pastikan <a href="http://www.noupe.com/how-tos/7-key-principles-that-make-a-web-design-look-good.html">7 perkara penting tentang desain</a> untuk menghasilkan themes yang kemas dan kelihatan cantik.</p> 
 		</div>
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/cara-kira-projek-sambilan.html">Cara Kira Projek Kerja Sambilan</a></h1>
+			<h1><a href="http://blog.dev/read/cara-kira-projek-sambilan.html">Cara Kira Projek Kerja Sambilan</a></h1>
 			<div class="date"><div>10 May 2014</div></div> 
 			<br/> <p>Sebagai seorang pekerja mahir, kita tidak akan terlepas daripada diminta untuk kerja-kerja freelance/sambilan. Jika anda seorang designer full time, pasti ada yang berminat untuk desain anda secara freelance.</p>
 <p>Bahasa mudahnya freelance ini seperti 'mengambil upah' menghasilkan kerja bagi pihak klien.</p>
@@ -260,7 +358,7 @@
 </ol> 
 		</div>
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/strategi-2014.html">Pelajaran Hidup 2014 dan Langkah Seterusnya</a></h1>
+			<h1><a href="http://blog.dev/read/strategi-2014.html">Pelajaran Hidup 2014 dan Langkah Seterusnya</a></h1>
 			<div class="date"><div>06 May 2014</div></div> 
 			<br/> <p>Setelah 3 tahun bertukar arah menjadi pekerja sepenuh masa (sebelum ini saya freelancer sepenuh masa) maka tibalah masa untuk merenung kembali apakah yang telah dipelajari selama ini dan apakah pula langkah untuk masa mendatang.</p>
 <h2>Pelajaran 1: Stabiliti penting untuk minda tenang</h2>
@@ -298,7 +396,7 @@
 <p>(dan dengan itu kembalinya fokus kemahiran saya daripada backend kepada frontend/UX/UI!)</p> 
 		</div>
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/nilai-seorang-programmer.html">Nilai Seorang Programmer</a></h1>
+			<h1><a href="http://blog.dev/read/nilai-seorang-programmer.html">Nilai Seorang Programmer</a></h1>
 			<div class="date"><div>02 May 2014</div></div> 
 			<br/> <p>Bermula daripada sebuah artikel yang berkongsi tentang kerjaya seorang <a href="http://thecodist.com/article/programming_is_a_dead_end_job">programmer adalah kerjaya mati</a> kerana gaji programmer tidak akan meningkat seperti mana gaji seorang eksekutif dan pekerja tahap pengurusan.</p>
 <p><img alt="sebenarnya ia sangatlah mudah" src="../images/programmer-value.jpg" /></p>
@@ -314,7 +412,7 @@
 <p>Pilih apakah software yang ingin kita hasilkan dengan berhati-hati kerana ia menentukan nilai kita sebagai programmer.</p> 
 		</div>
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/krisis-sebenar-proton-jenama.html">Krisis Sebenar Proton: Jenama</a></h1>
+			<h1><a href="http://blog.dev/read/krisis-sebenar-proton-jenama.html">Krisis Sebenar Proton: Jenama</a></h1>
 			<div class="date"><div>01 May 2014</div></div> 
 			<br/> <p>Merujuk kepada artikel dalam blog livelifedrive.com yang secara ringkasnya melaporkan dr Mahathir berpendapat <a href="http://www.livelifedrive.com/malaysia/news/view/120834/mahatir-proton-needs-to-be-protected-perodua-making-things-difficult-for-proton?utm_source=facebook&amp;utm_medium=cpc">jualan kereta proton yang merudum</a> adalah berpunca daripada rakyat Malaysia yang tidak patriotik.</p>
 <p><img alt="Proton Rally Championship" src="http://protonmotorsports.files.wordpress.com/2010/04/team.jpg" /></p>
@@ -335,7 +433,7 @@
 <p>Ya, Proton hebat dari segi teknologi dan jasa kepada tanahair ini. Namun jenama yang sangat lemah seperti sekarang akan membunuh Proton sedikit demi sedikit. Proton akan mati kerana tiada usaha menunjukkan kehebatannya yang sebenar.</p> 
 		</div>
 		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/strategi-daripada-nilai-dan-budaya-37Signals.html">Strategi Daripada Nilai dan Budaya 37Signals</a></h1>
+			<h1><a href="http://blog.dev/read/strategi-daripada-nilai-dan-budaya-37Signals.html">Strategi Daripada Nilai dan Budaya 37Signals</a></h1>
 			<div class="date"><div>16 Apr 2014</div></div> 
 			<br/> <p>Tiruvasi adalah jauh lebih mudah daripada berinovasi. Ia menjadi lebih mudah apabila nilai yang dimahukan terang-terangan didepan mata.</p>
 <p>37signals adalah sebuah syarikat pembangun produk internet yang sangat berjaya. Ia berjaya kerana banyak faktor, tetapi apa yang jelas adalah kerana mereka sangat menjaga 'nilai' dan 'budaya'.</p>
@@ -359,35 +457,13 @@
 <p>Juga, always be at the end of the spectrum. Always pick the best, and the best is not the one with the most 'balance' because balance is indifferent, and indifferent spell doom to early stage companies.</p>
 <p>This is Teras Tech Grand Strategi!</p> 
 		</div>
-		<div class="post" id="{{post-id}}">
-			<h1><a href="http://localhost/blog/read/SOPRO.html">SOPRO (Standard Operating Procedure Pro)</a></h1>
-			<div class="date"><div>25 Mar 2014</div></div> 
-			<br/> <p>Software khas untuk menghasilkan SOP, tanpe perlun fikir tentang SOP!</p>
-<p>Dalam SOPRO, konsep SOP telah diperhalusi. SOP yang terlalu besar itu ibarat bangunan yang kukuh, dan batu-batanya adalah Checklist.</p>
-<p>Struktur SOP daripada paling asas ke yang paling atas adalah:</p>
-<ol>
-<li>Action (form or not).</li>
-<li>Checklist</li>
-<li>Board &amp; Column</li>
-<li>SOP</li>
-</ol>
-<p>Ini bermaksud, satu SOP terdiri daripada many Board, yang terdiri daripada Many Column, yang terdiri daripada banyak Checklist, yang terdiri daripada banyak Action yang mana mungkin mempunyai Form.</p>
-<p>Ini menjadikan Sistem SOP ini sangat fleksibel dan mudah difahami oleh semua orang. Setiap user yang ingin melakukan sesuatu akan merujuk kepada sistem dan mencari SOP yang berkaitan. Ia kemudian cukup sekadar mengikuti setiap checklist dan meletakkan update pada form yang sepatutnya.</p>
-<p>Seterusnya sistem yang akan menguruskan pembahagian tugas seperti yang telah disetting oleh pengurus SOP. Siapa yang perlu sambung kerja, apa status kerja tersebut.</p>
-<p>Yang paling menarik adalah Pengurus SOP boleh memilih beberapa action yang mahu di track sebagai Key Metrics. Key Metrics ini boleh dipaparkan dalam ruang laporan mengikut hari, minggu, bulan, quarter dan tahunan. </p>
-<p>Ini memudahkan reporting.</p>
-<p>Pengurus SOP juga boleh membina rules untuk alert. Contohnya apabila "action &lt;/>/==/&lt;=/>=/ (val,string,another action, formula of action)" then alert(user/group, 'message {action_name} {value}');</p>
-<p>Ini memudahkan monitoring!</p>
-<p>Yang paling menarik adalah Pengurus Sistem boleh menjadikan SOP yang telah dibina sebagai templat yang memudahkan pengguna baru untuk menggunakan da  membina SOP.</p>
-<p>Itulah projek yang paling menarik untuk dibuat: SOPD</p> 
-		</div>
 
 	</div>
 
 	<div class="navigation">
 		<h3>Artikel-artikel lain:</h3>
 		<ul id="nav">
-			<li><a href="http://localhost/blog/read/remote-working.html">Remote Working Tools</a></li><li><a href="http://localhost/blog/read/rahsia-email-marketing.html">Sejarah Ringkas Dunia Web dan Rahsia Email Marketing</a></li><li><a href="http://localhost/blog/read/pengenalan-lean-startup.html">Lean Startup: Pengenalan</a></li><li><a href="http://localhost/blog/read/orchestra-preparation.html">Orchestra Preparation</a></li><li><a href="http://localhost/blog/read/membangunkan-satu-kitaran-eksperimen-B-M-L.html">Build - Measure - Learn : Membangunkan Satu Kitaran Eksperimen B-M-L</a></li><li><a href="http://localhost/blog/read/memastikan-setiap-hari-kita-menulis.html">Memastikan Setiap Hari Kita Menulis</a></li><li><a href="http://localhost/blog/read/measure-menyediakan-platform-eksperimen.html">Measure : Menyediakan Platform Eksperimen Produk</a></li><li><a href="http://localhost/blog/read/tentang-robotys.html">Tentang Robotys</a></li>
+			<li><a href="http://blog.dev/read/SOPRO.html">SOPRO (Standard Operating Procedure Pro)</a></li><li><a href="http://blog.dev/read/remote-working.html">Remote Working Tools</a></li><li><a href="http://blog.dev/read/rahsia-email-marketing.html">Sejarah Ringkas Dunia Web dan Rahsia Email Marketing</a></li><li><a href="http://blog.dev/read/pengenalan-lean-startup.html">Lean Startup: Pengenalan</a></li><li><a href="http://blog.dev/read/orchestra-preparation.html">Orchestra Preparation</a></li><li><a href="http://blog.dev/read/membangunkan-satu-kitaran-eksperimen-B-M-L.html">Build - Measure - Learn : Membangunkan Satu Kitaran Eksperimen B-M-L</a></li><li><a href="http://blog.dev/read/memastikan-setiap-hari-kita-menulis.html">Memastikan Setiap Hari Kita Menulis</a></li><li><a href="http://blog.dev/read/measure-menyediakan-platform-eksperimen.html">Measure : Menyediakan Platform Eksperimen Produk</a></li><li><a href="http://blog.dev/read/tentang-robotys.html">Tentang Robotys</a></li>
 			<li><a href="../read/all.html" class="more">senarai artikel &raquo;</a></li>
 		</ul>
 	</div>

@@ -61,6 +61,7 @@
 	$Parsedown = new Parsedown();
 
 	foreach($posts as $i=>$post){
+
 		$md = file_get_contents('posts/'.($post['filename']));
 		$md = str_replace('(images/', '(../images/', $md);
 		$post['excerpt'] = str_replace('(images/', '(../images/', $post['excerpt']);
