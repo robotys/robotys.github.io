@@ -155,8 +155,9 @@
 	}
 
 	function read_url($slug){
-		if(!ISSET($domain)) $domain = 'http://'.str_replace('/gen.php', '', ($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
-		return $domain.'/read/'.$slug.'.html';
+
+		// if(!ISSET($domain)) $domain = 'http://'.str_replace('/gen.php', '', ($_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
+		return '../read/'.$slug.'.html';
 	}
 
 	function dumper($multi){
