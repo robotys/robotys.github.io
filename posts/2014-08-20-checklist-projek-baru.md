@@ -1,8 +1,10 @@
 # Checklist Projek Baru
 
+Setiap kali saya mula projek baru, pasti ada beberapa perkara yang kelihatan sama sahaja diulang-ulang. Perkara yang berulang-ulang ini elok dibuat dokumentasi agar mudah untuk susun SOP dikemudian hari. 
+
 ![Kredit Photo: Galymzhan Abdugalimov](http://31.media.tumblr.com/3afad829ce330a66b3bbb98831c1c393/tumblr_mx3tpto69r1st5lhmo1_1280.jpg)
 
-Setiap kali saya mula projek baru, pasti ada beberapa perkara yang kelihatan sama sahaja diulang-ulang. Perkara yang berulang-ulang ini elok dibuat dokumentasi agar mudah untuk susun SOP dikemudian hari. Maka berikut adalah Checklist ringkas memulakan projek baru:
+Maka berikut adalah Checklist ringkas memulakan projek baru:
 
 1. Pilih Nama yang debabom! (ini memang perlu satu post khas untuk tajuk ini sahaja)
 2. Check nama agar available di [namecheap.com](http://namecheap.com). Jika tidak available ulang balik step 1.
