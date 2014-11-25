@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:700,400);
+
+body{
+	background: url(http://subtlepatterns.com/patterns/seamless_paper_texture.png);
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+.paper{
+	border: #F00 ;
+	padding-bottom: 150px;
+}
+
+h1, h2{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	/*margin-bottom: 40px;*/
+}
+
+h1{	
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
+h2{
+	font-size: 1.5em;
+	/*text-align: left;*/
+	margin-top: 40px;
+}
+
+p{
+	margin-bottom: 20px;
+	line-height: 25px;
+}
+
+p.subheading{
+	font-size: 1.3em;
+	text-align: center;
+}
+
+.img-caption{
+	font-size: 0.8em;
+	text-align: center;
+	/*padding: 20px;*/
+	padding: 20px 20px 5px 20px;
+	/*border: #ccc 1px dashed ;*/
+	border-bottom: 1px #BBB solid;
+	margin: 20px 0px;
+	background: url(http://subtlepatterns.com/patterns/diagonal-noise.png);
+}
+
+.img-caption > p{
+	margin-top: 15px;
+	/*background: #eee;*/
+}
+
+.img-caption > img{
+	/*width: 40%;*/
+	border: 5px #FFF solid;
+	box-shadow: 0px 0px 5px #888;
+	max-width: 100%;
+}
+
+img.cover{
+	max-width: 50%;
+	margin: 0 auto;
+}
+
+
+li{
+	/*list-style-image: url('sign-check-24.png');*/
+	font-size: 1.2em;
+	margin-bottom: 10px;
+	position: relative;
+	list-style-type: none;
+	/*background-position: (10px,0px);*/
+}
+
+li:before{
+	content: "";
+	position:absolute;
+	top: 2px;
+	left: -30px;
+	width: 24px;
+	height: 24px;
+	background-image: url('../img/sign-check-24.png');
+}
