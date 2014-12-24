@@ -1,0 +1,117 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700|Source+Serif+Pro);
+
+body{
+	font-family: "Source Serif Pro", serif;
+	font-size: 18px;
+	color: #444;
+	background-color: #f6f6f6;
+	background-attachment:scroll;
+	background-image:url(http://subtlepatterns.com/patterns/paper.png);
+}
+
+.container{
+	max-width: 600px
+}
+
+.header{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.header h1{
+	margin-bottom: 0px;
+}
+
+.header h1 > big{
+	font-size: 1.7em;
+}
+
+.header em{
+	font-size: 1.3em;
+}
+
+.content{
+	box-sizing: border-box;
+	width: 100%;
+	float: left;
+}
+
+p{
+	text-indent: 18px;
+	float: left;
+	width: 100%;
+	text-align: justify;
+}
+
+strong{
+	color: #222;
+}
+
+.footer{
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 40px;
+	font-size: 0.8em;
+	float:left;
+	padding: 20px;
+	text-align: center;
+}
+
+.vids, .img{
+	background: #fff;
+	padding: 20px;
+	margin: 20px 0;
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+	float: left;
+}
+
+.vids p, .img p{
+	font-size: 0.7em;
+	font-style: italic;
+	text-indent: 0;
+	text-align: center;
+}
+
+.vids, .img{
+	background: none;
+}
+
+.img img, .vids iframe{
+	max-width: 100%;
+	border: 10px solid #fff;
+	box-shadow: 0px 5px 5px #999;
+}
+
+.call_to_action{
+	
+	font-size: 1.3em;
+	float: left;
+	font-weight: 700;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+
+}
+.atas, .bawah{
+	padding: 8px;
+	background: #FF0;
+	/*color: #fff;*/
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.bawah{
+	background: #00F;
+	color: #fff;
+}
+
+h2{
+	text-align: center;
+	margin: 40px 0 20px 0;
+	float: left;
+	box-sizing: border-box;
+	width: 100%;
+	text-transform: capitalize;
+}

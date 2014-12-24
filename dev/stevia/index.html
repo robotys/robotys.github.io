@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ubat Kencing Manis Stevia</title>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/style.css" type="text/css" />
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+
+		var kodkupon = getCookie("kodkupon");
+	    if (kodkupon != "") {
+	        // showCoupon
+	        showCoupon();
+	    } else {
+	        // setCoupon
+	       	var coupon = genCoupon();
+	       	setCookie('kodkupon', coupon, 999);
+	        // showCoupon
+	        showCoupon();
+	    }
+
+	    function showCoupon(){
+	    	// var coupon = "CONTOH";
+	    	var coupon = getCookie('kodkupon');
+	    	$('.kodkupon').html(coupon);
+
+	    	if(link_template() != false){
+	    		link_template = link_template();
+	    		//tukar semua sms_link punya isi dengan a href
+	    		var asal = $('.sms_link').html();
+	    		var baru = '<a href="'+link_template+'">'+asal+'</a>';
+	    		$('.sms_link').html(baru);
+	    	}
+
+	    }
+
+
+	});
+
+
+	function genCoupon(){
+
+		var map = [1,2,3,4,5,6,7,8,9,'W','E','R','T','Y','U','P','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M']
+
+		return map[getRand()]+map[getRand()]+map[getRand()]+map[getRand()];
+	}
+
+	function getRand(){
+		return Math.round(Math.random() * (30 - 0) + 0);
+	}
+
+	function setCookie(cname, cvalue, exdays) {
+	    var d = new Date();
+	    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	    var expires = "expires="+d.toUTCString();
+	    document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1);
+	        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+	    }
+	    return "";
+	}
+
+	function link_template(){
+		var ua = navigator.userAgent;
+		var ret = false;
+		var checker = {
+						iphone: ua.match(/(iPhone|iPod|iPad)/),
+						blackberry: ua.match(/BlackBerry/),
+						android: ua.match(/Android/)
+					};
+		if (checker.android){
+			ret = 'sms:+60166611428?body=Message Body';
+		}
+		else if (checker.iphone){
+			ret = 'sms:+60166611428&body=Message Body';
+		}
+		else if (checker.blackberry){
+			// ret = ''
+		}
+		else {
+			// ret = 'sms:+60166611428&body=Message Body';
+		}
+
+		return ret;
+	}
+
+	</script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="header col-md-12">
+	<h1>Ubat Kencing Manis Berkesan: <br> <big>SteviaDrop</big></h1>
+	<em>Manis Ada, Kencing Manis Tiada</em>
+</div>
+</div>
+
+<div class="content">
+	<div class="row"><div class="col-md-12">
+		<div class="call_to_action">
+			<div class="atas">WhatsApp/SMS "<span class="sms_link">STEVIA <span class="kodkupon">#KODKUPON</span></span>" ke 0166611428</div>
+			<div class="bawah">SEKARANG untuk kos penghantaran PERCUMA</div>
+		</div>
+
+		<div class="img">
+			<img src="assets/orang-tua-senyum.jpg">
+			<p>Demi Senyuman Orang Tua Kita</p>
+		</div>
+
+		<h2>Apakah Stevia Drop?</h2>
+		<p>SteviaDrop adalah titisan pemanis makanan yang bukan daripada Gula</p>
+
+		<h2>Bagaimana Menggunakannya?</h2>
+		<p>Titiskan dalam apa sahaja minuman atau makanan, panas atau sejuk untuk menikmatinya</p>
+
+		<div class="img">
+			<img src="assets/botol.jpg">
+			<p>Cara Guna Titisan Stevia</p>
+		</div>
+
+		<h2>Bagaimana ia mengubati penyakit kencing manis?</h2>
+		<p>Penyakit kencing manis adalah disebabkan lebihan gula yang melampau dalam badan. Gula pasir menjadi 'racun' kepada tubuh apabila terlalu banyak dalam badan. <strong>Stevia</strong> ini harus digunakan bagi <strong>menggantikan gula pasir</strong>. Stevia BUKAN GULA tetapi manis. Bila kita tidak makan gula, maka RACUN gula pasir semakin kurang dalam badan. Itu yang mengubati penyakit kencing manis: TIDAK MAKAN GULA</p>
+
+		<h2>Adakah Stevia ini sejenis Ubat?</h2>
+		<p>Ya dan bukan. Ya kerana ia mengubati penyakit kencing manis. Bukan kerana ia tergolong dalam kategori 'supplement' atau makanan tambahan/gantian.</p>
+
+		<div class="img">
+			<img src="assets/botol-hijau.jpg">
+			<p>Pakej Pemanis Stevia Premium</p>
+		</div>
+
+		<h2>Apakah sukatan menggunakannya?</h2>
+		<p> 1 titisan Stevia Drop bersamaan dengan manisnya 3 sudu gula. Gunakan mengikut tahap kemanisan yang disukai. Makan sangat manis guna stevia tidak mengapa kerana ia bukan gula pasir. Satu botol kecil boleh dapat 250 hingga 300 titisan Stevia.</p>
+
+		<p>Jika sehari minum 3 kali air manis = 3 titisan stevia. Maka 1 botol kecil boleh tahan sehingga 100 hari minum air manis.</p>
+
+		<h2>Wah, menarik! Berapa Harganya?</h2>
+		<p>Sebotol kecil Stevia <strong>berharga RM 50</strong> tidak termasuk penghantaran. Penghantaran ke seluruh negara, Semenanjung dan Sabah Sarawak adalah <strong>RM 10</strong></p>
+
+		<p>Namun jika tuan pertama kali, <strong>kami tawarkan PENGHANTARAN PERCUMA!</strong></p>
+
+
+		<div class="img">
+			<img src="assets/azree-senario.jpg">
+			<p>Azree Senario Juga Mengamalkan Titisan Stevia</p>
+		</div>
+
+		<p>Ya, hanya perlu bayar RM 50 untuk setiap botol dan kami akan hantar ke alamat tuan tanpa tambah kos penghantaran</p>
+
+		<p>Tawaran ini hanya <strong>terhad</strong> kepada tuan <strong>hingga malam esok</strong> (kod kupon: <span class="kodkupon">#KODKUPON</span>) </p>
+
+		<h2>OK! Bagaimana saya boleh mendapatkannya?</h2>
+
+		<p>Whatsapp/sms "<span class="sms_link">STEVIA <span class="kodkupon">#KODKUPON</span></span>" ke 0166611428 dan ikuti langkah-langkah yang diberikan</p>
+
+		<h2>Testimonial</h2>
+
+		<p>Telah ramai yang semakin sembuh daripada sakit kencing manis dengan stevia:</p>
+
+		<div class="vids">
+			<iframe width="560" height="315" src="//www.youtube.com/embed/Y1NqiNw-q7s" frameborder="0" allowfullscreen></iframe>
+			<p>Ija rasa agak kesal kerana tidak dipertemukan rcc sweetener seblum kaki bonda tersayang di potong.. penggunaan 2 botol dah nampak kesan yg baik pada luka</p>
+		</div>
+
+		<div class="vids">
+			<iframe width="420" height="315" src="//www.youtube.com/embed/ATqJjnnt28Q" frameborder="0" allowfullscreen></iframe>
+			<p>Menghidap Diabetes pada usia muda. Kini semakin pulih.</p>
+		</div>
+
+		<div class="vids">
+			<iframe width="420" height="315" src="//www.youtube.com/embed/ZMKww1v0pu4" frameborder="0" allowfullscreen></iframe>
+			<p>Gula turun daripada 25 kepada 16.1 dengan 11 hari menggunakan Stevia.</p>
+		</div>
+
+		<div class="vids">
+			<iframe width="420" height="315" src="//www.youtube.com/embed/3ozHJNtEclk" frameborder="0" allowfullscreen></iframe>
+			<p>Puan Umi Salamah dari Felda Bukit Kuantan. Rasa lebih bertenaga dan tidak jadi operate jantung.</p>
+		</div>
+
+		<div class="vids">
+			<iframe width="560" height="315" src="//www.youtube.com/embed/Xv8xI4LKqzQ" frameborder="0" allowfullscreen></iframe>
+			<p>Kak Bib, Sungai Petani Kedah. Stevia ganti gula. Jauh lebih bertenaga untuk bekerja dalam bulan puasa.</p>
+		</div>
+
+		<h2>DAPATKAN SEKARANG UNTUK PENGHANTARAN PERCUMA:</h2>
+
+		<!-- <p>Ya, Whatsapp/SMS "STEVIA #KODKUPON" ke 0166611428 Sekarang untuk penghantara percuma!</p> -->
+
+		<div class="call_to_action">
+			<div class="atas">WhatsApp/SMS "<span class="sms_link">STEVIA <span class="kodkupon">#KODKUPON</span></span>" ke 0166611428</div>
+			<div class="bawah">SEKARANG untuk kos penghantaran PERCUMA</div>
+		</div>
+
+	</div></div>
+
+</div>
+
+<div class="footer">
+	Hakcipta Terpelihara UbatSakit.com &copy; 2014
+</div>
+
+</div></div>
+</body>
+</html>
