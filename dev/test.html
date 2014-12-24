@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tester</title>
+
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+	<script>
+
+	$(document).ready(function(){
+		$('.link').html(link_template);
+		$('.link').attr('href',link_template);
+	});
+
+
+	var link_template = function(){
+		var ua = navigator.userAgent;
+		var ret = 'Not Mobile';
+		var checker = {
+						iphone: ua.match(/(iPhone|iPod|iPad)/),
+						blackberry: ua.match(/BlackBerry/),
+						android: ua.match(/Android/)
+					};
+		if (checker.android){
+			ret = 'sms:+60166611428?body=Message Body';
+		}
+		else if (checker.iphone){
+			ret = 'sms:+60166611428;body=Message Body';
+		}
+		else if (checker.blackberry){
+			// ret = ''
+		}
+		else {
+			// $('.unknown-device').show();
+		}
+
+		return ret;
+	}
+
+	</script>
+
+</head>
+<body>
+
+<h1>To Test Mobile Detection Via Javascript</h1>
+<h2><a href="#" class="link"></a></h2>
+</body>
+</html>
